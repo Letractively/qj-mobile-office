@@ -7,6 +7,10 @@
 		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<style media="screen">
+			* {
+				margin: 0;
+				padding: 0;
+			}
 			article, aside, figure, footer, header, hgroup, 
 			menu, nav, section { 
 				display: block; 
@@ -14,6 +18,15 @@
 			body {
 				padding: 0;
 				margin: 0;
+			}
+			#page {
+				width: 960px;
+				margin: 0 auto;
+			}
+			#page_header {
+				width: 960px;
+				padding: 20px 40px;
+				background: url("rect.png") no-repeat;
 			}
 
 
@@ -23,7 +36,7 @@
 	</head>
 	<body>
 		<section id="page">
-			<header>
+			<header id="page_header">
 				<h1>
 					RuCTFE
 				</h1>
