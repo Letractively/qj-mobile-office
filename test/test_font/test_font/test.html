@@ -1,0 +1,44 @@
+<html>
+  <style>
+  @font-face {
+    /*
+      спецификация: http://www.w3.org/TR/css3-fonts/ пункт 4 - загрузка шрифтов, начиная с пункта 6.5 много никому неизвестного
+    */
+    font-family: 'E1743';
+
+    /*
+      eot безопасный формат (со сжатием и возможностью разложения шрифта (например, только кириллические символы)),
+      IE понимает только такие шрифты (www.microsoft.com/typography/weft.mspx - генератор таких файлов)
+    */
+  	src: url('essays1743-webfont.eot'); 
+  	
+    /*
+      local() проверяет наличие шрифта у пользователя. Если шрифта нет, он подгружается с сервера
+      format(): woff(.woff) | truetype(.ttf) | opentype(.ttf, .otf) | embedded-opentype (.eot) | svg (.svg, .svgz)
+      woff - сжатый opentype
+      unicode-range - встроенный механизм разложения шрифта, здесь не используется. Пример: unicode-range: U+000-5FF, U+1e00-1fff, U+2000-2300
+
+      если 'Essays 1743' есть локально
+        берем
+      иначе
+        если 'Essays1743' есть локально
+          берем
+        иначе
+          если woff is successfully activated (так написано в документации, м.б. это значит удалось скачать, распознать ...)
+            берем
+          иначе
+            если ttf is successfully activated
+              берем
+            иначе
+              берем Arial
+    */
+    src: local('Essays 1743'), local('Essays1743'), url('essays1743-webfont.woff') format('woff'), url('essays1743-webfont.ttf') format('truetype'); 
+  }
+  h1 {
+  	font-family: 'E1743';
+  }
+  </style>
+  <body>
+  <h1>External font!</h1>
+  </body>
+</html>
