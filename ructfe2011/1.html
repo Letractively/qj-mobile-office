@@ -19,11 +19,6 @@
 			article, aside, figure, footer, header, hgroup, 
 			menu, nav, section { 
 				display: block;
-				border: 1px dotted; 
-			}
-			body {
-				padding: 0;
-				margin: 0;
 			}
 			#page {
 				width: 1000px;
@@ -37,26 +32,33 @@
 			}
 			#header_content {
 				position: relative;
-				top: 46px;
-				left: 195px;
+				top: 40px;
+				left: 190px;
+			}
+			#optnavlist {
+				list-style-type: none;
+				float: right;
+			}
+			#optnavlist li {
+				float: left;
+				padding-left: 10px;
 			}
 			#main {
+				width: 640px;
 				float: left;
 			}
 			#navbar {
-				width: 640px;
 				padding: 20px 20px 40px;
 				font-size: 16pt;
 			}
 			#navlist {
 				list-style-type: none;
 			}
-			#main nav ul li {
+			#navlist li {
 				float: left;
 				padding-right: 10px;
 			}
 			#newsblock {
-				width: 640px;
 				padding: 20px;
 				word-wrap: break-word;
 			}
@@ -64,12 +66,14 @@
 				padding-bottom: 10px;
 			}
 			#sponsors {
-				width: 640px;
 				padding: 20px;
 			}
 			#widgets {
 				width: 280px;
 				padding: 20px;
+				float: right;
+			}
+			.widget_block {
 				float: right;
 			}
 			#copyleft {
@@ -89,6 +93,14 @@
 				<h1 id="header_content">
 					RuCTFE
 				</h1>
+				<ul id="optnavlist">
+					<li>
+						RU &#x007C ENG
+					</li>
+					<li>
+						RSS
+					</li>
+				</ul>
 			</header>
 			<div id="main">
 				<nav id="navbar">
@@ -125,14 +137,31 @@
 							</p>
 						</footer>
 					</article>
+					<article class="news">
+						<header>
+							<h1>
+								Article1
+							</h1>
+						</header>
+						<p>
+							qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+						</p>
+						<footer>
+							<p>
+								<time pubdate datetime="2001-01-01">
+									01.01.2001
+								</time>
+							</p>
+						</footer>
+					</article>
 				</section>
 				<section id="sponsors">
 					<img src="rect.png"/>
 					<img src="rect.png"/>
 				</section>
-			</main>
+			</div>
 			<aside id="widgets">
-				<article>
+				<article class="widget_block">
 					<header>
 						<h1>
 							Widget1
@@ -150,24 +179,4 @@
 	</body>
 </html>
 
-<!--		body {
-			font-family: Georgia;
-			max-width: 640px;
-			margin: 0;
-			text-align: center;
-		}
-		div {
-			display: inline-block;
-			word-wrap: break-word;
-			vertical-align: top;
-			min-width: 8em;
-			max-width: 8.5em;
-			min-height: 8em;
-			border: 1px dotted;
-			margin-bottom: 2em;
-			text-align: left;
-			border-radius: 5px;
-			-moz-border-radius: 5px;
-			-webkit-border-radius: 5px;
-		}  -->
 
