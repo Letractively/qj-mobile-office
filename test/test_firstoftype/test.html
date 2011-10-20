@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<style>
+		div p:first-of-type { font-weight: bold; font-size: 1em; }
+
+		/* просто .x p не может "перебить" предыдущее указание, нужно писать .x p:first-of-type */
+		.x p { font-weight: normal; }
+	</style>
+	</head>
+	<body>
+		<div>
+			<p>aaa</p>
+		</div>
+
+		<div class="x">
+			<p>bbb</p>
+		</div>
+	</body>
+</html>
