@@ -1,0 +1,159 @@
+<!DOCTYPE html> <!-- HTML5 -->
+<html lang="en"> <!-- основной язык английский -->
+
+<head>
+    <meta charset="utf-8" /> <!-- кодировка -->
+    <title></title>
+
+    <!-- стили, type="css" по-умолчанию -->
+    <!-- атрибут media связывает стили с устройством отображения. см. http://dev.w3.org/csswg/css3-mediaqueries/ -->
+    <link rel="stylesheet" href="" media="screen" />
+
+    <!-- создаем html5-элементы динамически - только так для них будут работать стили в IE -->
+    <!-- conditional comments - изобретение Microsoft, работает только в IE -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- rss рассылка (discoverable by software) -->
+    <link rel="alternate" type="application/rss+xml" title="" href="" />
+
+
+    <!-- скрипты, type по-умолчанию "text/javascript" -->
+    <!-- на http://www.w3.org/TR/html5-diff/#changed-attributes пишут, что умолчание ECMAScript -->
+
+    <!-- JavaScript был первоначально создан Netscape -->
+    <!-- Microsoft реализовали диалект JScript -->
+    <!-- Netscape стандартизовал JavaScript в ECMA International, появилась спецификация ECMAScript -->
+    <!-- JavaScript развивается FireFox, Chrome, Opera, Safari. см. http://en.wikipedia.org/wiki/JavaScript_engine -->
+    <!-- ... в IE остается JScript -->
+
+    <!-- атрибут language не нужен - type достаточно -->
+    <script type='text/javascript' src=''></script>
+
+    <!-- описание блогов (discoverable by software) -->
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://html5doctor.com/xmlrpc.php?rsd" />
+
+    <!-- !important делает стилевые настройки непереопределяемыми для не-important стилей -->
+	<style type="text/css">
+        .recentcomments a{display:inline !important}
+    </style>
+
+	<!-- подтверждение сайта для Google (процедура индексирования), см. https://www.google.com/webmasters/tools -->  
+	<meta name="google-site-verification" content="eNFgXoATiYxkZGKen0ShwwTF-BC511Vjp8x7QTDeA34" />
+</head>
+
+<body>
+<!-- WAI-ARIA атрибут role. Поддержка для людей с ограниченными возможностями -->
+<!-- width: 100%, height: ?px, background: темный -->
+<header role="banner">
+    <!-- margin: 0 (верх-низ) auto (лево-право), width: ?px -->
+    <div class="inner group">
+
+    <!-- блочная ссылка -->
+    <a href="http://html5doctor.com" rel="home">
+    <div><!-- wrapper div for FireFox 3.x -->
+        <hgroup><!-- для красивого outline'а (только h1 будет отображаться) -->
+        <h1>HTML5 Doctor</h1><!-- background: url(?) no-repeat -->
+        <h2>Helping you implement HTML5 today</h2><!-- left: ?, top: ? -->
+        </hgroup>
+    </div>
+    </a>
+
+    <!-- навигация верх-права. list-style-type: none, absolute, right: 0, top: 10px -->
+ 	<ul>
+        <!-- float: left,  -->
+        <!-- li::after { content: "|" (разделитель) } -->
+        <li> <a href="">About</a> </li>
+
+        <!-- li:last-child::after { content: " " }, background: url(?) no-repeat right (справа) 50% (в середине) -->
+        <li> <a href="#">Doctor Network</a>
+        <ul class="sub-menu">
+	       <li></li>
+        </ul>
+        </li>
+    </ul>
+
+    <!-- основная навигация верх-середина. z-index: 3 (чтобы быть "выше" светлой полски)  -->
+    <nav>
+        <!-- разделы -->
+		<ul></ul>
+
+        <!-- поиск, зачем li? -->
+    	<ul>
+    		<li>
+            <form id="search-form" action="/search/" role="search"  method="get">
+            <div>
+                <input type="text" name="q" value="" />
+                <input type="submit" value="Search" />
+            </div>
+            </form>
+            </li>
+    	</ul>
+    </nav>
+	</div>
+</header>
+
+<!-- width: ?px, -webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.3) (тень) -->
+<!-- border-top: 45px solid светлый-голубой, margin: -45px (сверху) auto (по бокам) 0 (снизу) -->
+<div role="main">
+
+    <!-- верхушка: последний пост и список последних комментариев (справа) -->
+    <article>
+        <!-- основной div, width: ?px -->
+        <div>
+            <article>
+                <header>
+                    <!-- обратить внимание на rel -->
+                    <h1> <a rel="bookmark"></a> </h1>
+
+                    <small>
+                        <!-- pubdate выделяет дату в тексте (важная дата) -->
+                        <time datetime="2011-10-04" pubdate>October 4th, 2011</time> by <a href="" title="Posts by Richard Clark" rel="author">Richard Clark</a>.<!-- снова rel -->
+                    </small>
+                </header>
+
+                <!-- группировка div'ами -->
+                <div>
+                    <p>Text</p>
+                    <p><a href="">Read full post</a></p>
+                </div>
+              </article>
+        </div>
+                
+        <!-- боковая панель, width: ?px -->
+        <aside>
+            <section>
+                <!-- ul список последних комментов -->
+            </section>
+        </aside>
+    </article>
+
+    <!-- список html-элементов, overflow: auto? -->
+    <section>
+        <h1></h1>
+        <section><!-- первая колонка, float: left? какие-то проценты в размерах? первая колнка с подобранным margin-left? -->
+            <h2></h2>
+            <ul></ul>
+        </section>
+    </section>
+
+    <!-- div id="grid-list" -->
+</div>
+
+<footer role="contentinfo">
+    <!-- width: ?px, margin: 0 auto -->
+	<div>
+        <!-- HTML5 logo, float: right -->
+    	<img width="64" height="64" class="w3c-logo" alt="W3C HTML5 logo (not CSS3!)" src="http://html5doctor.com/wp-content/themes/html5doctor2/images/HTML5_Badge_64.png">
+
+        <!-- снова интересный rel, background: url(?) no-repeat 20px 0, padding-right: ширина картинки -->
+		<p>This site is licensed under a <a href="" rel="license">XYZ</a> share alike license. Feel free to change, reuse modify and extend it. Some authors will retain their copyright on certain articles.</p>
+
+        <p>Copyright &copy; 2011 HTML5 Doctor. All rights reserved. Hosted by <a href="">(mt) Media Temple</a>. Branding by <a href="">Oliver Ker</a>.</p>
+	</div>
+</footer>
+
+<!-- место для buysellads.com и google-analytics.com скриптов -->
+</body>
+</html>

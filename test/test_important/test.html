@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<style>
+		div { color: white; }
+	</style>
+
+	<style>
+		#ii, #in { background-color: red !important; }
+		#ni, #nn { background-color: red; }
+	</style>
+
+	<style>
+		#ii, #ni { background-color: green !important; }
+		#nn, #in { background-color: green; }
+	</style>
+	</head>
+	<body>
+		<div id="ii">
+		important(red) important(green)
+		</div>
+
+		<div id="in">
+		important(red) not-important(green)
+		</div>
+
+		<div id="nn">
+		not-important(red) not-important(green)
+		</div>
+
+		<div id="ni">
+		not-important(red) important(green)
+		</div>
+	</body>
+</html>

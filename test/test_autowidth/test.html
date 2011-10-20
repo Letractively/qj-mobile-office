@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<style>
+		body { width: 200px; margin: 0 auto; }
+
+		/* как обычно: два размера и float'ы (иначе блочные элементы не лягут в строчку) */
+		#a section { width: 80px; float: left; }
+		#a aside { width: 120px; float: left; }
+
+		/* table-cell (не работает в IE < 8) */
+		#b section { min-width: 80px; display: table-cell; }
+		#b aside { width: 100%; display: table-cell; }
+
+		/* ну как еще это сделать??? :) */
+		#c section { width: 80px; float: left; }
+		#c aside { display: inline-block; width: 100%; }
+		#c { white-space: nowrap; }
+	</style>
+	</head>
+	<body>
+		<section id="a">
+			<section>
+			a
+			</section>
+			<aside>
+			a
+			</aside>
+		</section>
+
+		<section id="b">
+			<section>
+			b
+			</section>
+			<aside>
+			b
+			</aside>
+		</section>
+
+		<section id="c">
+			<section>
+			c
+			</section>
+			<aside>
+			c
+			</aside>
+		</section>
+	</body>
+</html>
