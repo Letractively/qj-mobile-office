@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+		body { background-color: #f8f8f8; }
+		</style>
+	</head>
+	<body>
+		<article>
+			<h1>Twitter</h1>
+
+			<!-- нужно поменять original_referer (url новости), text (заголовок новости) и url (равно referer) -->
+			<a class="social" href="https://twitter.com/share?original_referer=http%3A%2F%2Ftwitter.com%2Fgoodies%2Ftweetbutton&amp;source=tweetbutton&amp;text=Twitter%20%2F%20K%D0%BD%D0%BE%D0%BF%D0%BA%D0%B0%20%C2%AB%D0%A2%D0%B2%D0%B8%D1%82%D0%BD%D1%83%D1%82%D1%8C%C2%BB&amp;url=http%3A%2F%2Ftwitter.com%2Fgoodies%2Ftweetbutton">
+			tweet
+			</a>
+
+			<img src="tw1.png">
+			<img src="tw2.png">
+			<img src="tw3.png">
+		</article>
+
+		<article>
+			<h1>Facebook</h1>
+
+			<!-- хотелось бы использовать like, но ...
+			приходится добавлять фрейм отсюда http://developers.facebook.com/docs/reference/plugins/like/
+			если на странице будет много таких кнопок - будет много сложных фреймов и браузеру будет тяжело.
+			воспользовался netmon'ом, чтобы понять как работает like:
+			 HTTP GET на facebook.com. referrer = frame с описанием like'а (понравившийся url и т.д.)
+			 сервер facebook похоже из поля referrer извлекает все данные, а как это имитировать непонятно.
+
+			есть выход - плагин sharer, который вроде бы теперь deprecated из-за like, но пока работает
+			-->
+
+			<a class="social" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.lact.ru%2Fotzivy">
+			share
+			</a>
+
+			<img src="f1.png">
+			<img src="f2.png">
+			<img src="f3.png">
+		</article>
+
+		<article>
+			<h1>Вконтакте</h1>
+
+			<a class="social" href="http://vkontakte.ru/share.php?url=http%3A%2F%2Fwww.lact.ru%2F&title=%D0%9A%D0%B0%D0%BA+%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C+%D1%81%D0%B2%D0%BE%D0%B9+%D1%81%D0%B0%D0%B9%D1%82%3F">
+			отправить
+			</a>
+
+			<img src="vk1.png">
+			<img src="vk2.png">
+		</article>
+
+		<script>
+		{
+			addEvent =
+	  			document.addEventListener
+	  			?
+	    		function (el, type, fn) {//Chrome, FireFox, Opera, IE 9, Safari
+	      			el.addEventListener(type, fn, false);
+	      		}
+	      		:
+	      		function (el, type, fn) {//старые IE
+	      			                                         //вызвать fn(window.event), в рамках которого this = el
+	      			el.attachEvent('on' + type, function() { return fn.call(el, window.event); })
+	      		};
+
+	      	noDefault = function (e) {
+	      		                                        //старые IE
+	      		e.preventDefault ? e.preventDefault() : e.returnValue = false;
+	      	}
+
+	      	//width : height
+	      	w = 550;
+	      	h = 420;
+
+			function popup(e) {
+				// this - элемент, с которым связано событие, e - описатель события
+				function center(x,X) {
+					return X > x ? Math.round(X/2 - x/2) : 0;
+				}
+				window.open(
+					this.href,
+					'intent',
+					'scrollbars=yes,resizable=yes,toolbar=no,location=yes,'+
+					'width=' + w + ',height=' + h + ',left=' + center(w, screen.width) + ',top=' + center(h, screen.height)
+				);
+				noDefault(e);
+			}
+
+			a = document.body.getElementsByClassName('social');
+			for (i = 0; i < a.length; i++)
+				addEvent(a[i], 'click', popup);
+		}
+		</script>
+	</body>
+</html>
