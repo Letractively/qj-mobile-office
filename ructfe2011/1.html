@@ -7,6 +7,7 @@
 		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<style media="screen">
+			/*color: #ff0000;*/
 			@font-face {
 	  			font-family: "CommodorePixelized";
 	  			src: url("Commodore Pixelized v1.2.eot"); 
@@ -17,13 +18,24 @@
 				padding: 0;
 				border: 0;
 				outline: 0;
-				font-size: 100%;
-				font: inherit;
+			/*	font-size: 100%;
+				font: inherit; */
 				vertical-align: baseline;
-			}
+			} 
 			article, aside, figure, footer, header, hgroup, 
 			menu, nav, section { 
 				display: block;
+			}
+			a:link {
+				border-bottom: 1px dotted;
+				text-decoration: none;
+				color: #0000d4;
+			}
+			a:visited {
+				color: #6699CC;
+			}
+			a:hover {
+				border-bottom: 1px solid;
 			}
 			#page {
 				width: 1000px;
@@ -35,7 +47,7 @@
 			#header_content {
 				display: inline;
 				line-height: 92px;
-				font-family: CommodorePixelized, Georgia, "Times New Roman", serif;
+				font-family: CommodorePixelized, Georgia, Palatino, "Palatino Linotype", "Times New Roman", serif;
 				font-size: 40px;
 			}
 			#optnavlist {
@@ -51,17 +63,22 @@
 				float: left;
 				margin-left: 20px;
 				padding-right: 40px;
+				font: large/1.112 Georgia, Palatino, "Palatino Linotype", "Times New Roman", serif;
+				word-spacing: 0.1em;
 			}
 			#navbar {
-				padding-top: 20px;
-				padding-bottom: 60px;
-				font-size: x-large;
+				padding-top: 1.112em;
+				padding-bottom: 3.334em;
 			}
 			#navbar a:link {
 				text-decoration: none;
 				color: #000000;
 				text-transform: uppercase;
 				font-weight: bold;
+				border: 0;
+			}
+			#navbar a:visited {
+				color: #000000;
 			}
 			#navlist {
 				list-style-type: none;
@@ -75,20 +92,29 @@
 			}
 			#newsblock {
 				word-wrap: break-word;
-				font-size: large;
 			}
 			.news {
-				padding-bottom: 20px;
+				padding-bottom: 1.112em;
+			}
+			.news_header {
+				color: #999999;
+				padding-bottom: 0.278em;
+				font-size: medium;
+			}
+			.news_footer {
+				padding-top: 0.278em;
+				font-size: medium;
 			}
 			#sponsors {
-				padding-top: 20px;
+				padding-top: 1.112em;
 			}
 			#widgets {
-				padding-top: 20px;
+				padding-top: 1.112em;
 				padding-left: 40px;
 				float: left;
 				margin-right: 20px;
-				font-size: medium;
+				font: medium/1.125 Georgia, Palatino, "Palatino Linotype", "Times New Roman", serif;
+				word-spacing: 0.1em;
 			}
 			.widget_block {
 				width: 240px;
@@ -97,8 +123,8 @@
 			}
 			#copyleft {
 				width: 1000px;
-				padding-top: 40px;
-				padding-bottom: 20px;
+				padding-top: 2.223em;
+				padding-bottom: 1.112em;
 				text-align: center;
 				clear: both;
 				background: url("pixels.png") repeat-x bottom;
@@ -128,52 +154,46 @@
 				<nav id="navbar">
 					<ul id="navlist">
 						<li>
-							<a href="#">qqq</a>
+							<a href="#">Rules</a>
 						</li>
 						<li>
-							<a href="#">qqq</a>
+							<a href="#">Participants</a>
 						</li>
 						<li>
-							<a href="#">qqq</a>
+							<a href="#">Developers</a>
 						</li>
 						<li>
-							<a href="#">qqq</a>
+							<a href="#">Archive</a>
 						</li>
 					</ul>
 				</nav>
 				<section id="newsblock">
 					<article class="news">
-						<header>
-							<h1>
-								Article1
-							</h1>
-						</header>
-						<p>
-							qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-						</p>
-						<footer>
+						<header class="news_header">
 							<p>
-								<time pubdate datetime="2001-01-01">
-									01.01.2001
+								<time pubdate datetime="2001-01-01T12:15">
+										01.01.2001 12:15
 								</time>
 							</p>
+						</header>
+						<p>
+							RuCTFE 2011 is officially announced
+						</p>
+						<footer class="news_footer">
 						</footer>
 					</article>
 					<article class="news">
-						<header>
-							<h1>
-								Article1
-							</h1>
-						</header>
-						<p>
-							qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-						</p>
-						<footer>
+						<header class="news_header">
 							<p>
 								<time pubdate datetime="2001-01-01">
 									01.01.2001
 								</time>
 							</p>
+						</header>
+						<p>
+							Registration is <a href="#" class="stdlink">open</a>
+						</p>
+						<footer class="news_footer">
 						</footer>
 					</article>
 				</section>
@@ -186,12 +206,10 @@
 				<article class="widget_block">
 					<header>
 						<h1>
-							Widget1
 						</h1>
 					</header>
-					<img src="rect.png"/>
+					<img src="navaho.png"/>
 					<p>
-						qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 					</p>
 				</article> 
 			</aside>
