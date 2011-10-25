@@ -31,6 +31,9 @@
 				text-decoration: none;
 				color: #0000d4;
 			}
+			a:link {
+				border: 0;
+			}
 			a:visited {
 				color: #6699CC;
 			}
@@ -130,8 +133,6 @@
 			}
 
 		</style>
-		<script type="text/ecmascript">
-		</script>
 	</head>
 	<body>
 		<div id="page">
@@ -181,6 +182,15 @@
 							RuCTFE 2011 is officially announced
 						</p>
 						<footer class="news_footer">
+							<a class="social" href="http://vkontakte.ru/share.php?url=http%3A%2F%2Fructf.org%2Fe%2F2011&title=RuCTFE%202011%20is%20officially%20announced">
+								<img src="vk.png">
+							</a>
+							<a class="social" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fructf.org%2Fe%2F2011">
+								<img src="fb.png">
+							</a>
+							<a class="social" href="https://twitter.com/share?source=tweetbutton&text=RuCTFE%202011%20is%20officially%20announced&url=http%3A%2F%2Fructf.org%2Fe%2F2011">
+								<img src="tw.png">
+							</a>
 						</footer>
 					</article>
 					<article class="news">
@@ -195,6 +205,15 @@
 							Registration is <a href="#" class="stdlink">open</a>
 						</p>
 						<footer class="news_footer">
+							<a class="social" href="http://vkontakte.ru/share.php?url=http%3A%2F%2Fructf.org%2Fe%2F2011&title=Registration%20is%20open">
+								<img src="vk.png">
+							</a>
+							<a class="social" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fructf.org%2Fe%2F2011">
+								<img src="fb.png">
+							</a>
+							<a class="social" href="https://twitter.com/share?source=tweetbutton&text=Registration%20is%20open&url=http%3A%2F%2Fructf.org%2Fe%2F2011">
+								<img src="tw.png">
+							</a>
 						</footer>
 					</article>
 				</section>
@@ -221,6 +240,48 @@
 			</footer>
 		</div>
 	</body>
+	<script type="text/ecmascript">
+		(function () {
+			var addEvent =
+	  			document.addEventListener
+	  			?
+	    		function (el, type, fn) {//Chrome, FireFox, Opera, IE 9, Safari
+	      			el.addEventListener(type, fn, false);
+	      		}
+	      		:
+	      		function (el, type, fn) {//старые IE
+	      			                                         //вызвать fn(window.event), в рамках которого this = el
+	      			el.attachEvent('on' + type, function() { return fn.call(el, window.event); })
+	      		};
+
+	      	var noDefault = function (e) {
+	      		                                        //старые IE
+	      		e.preventDefault ? e.preventDefault() : e.returnValue = false;
+	      	}
+
+	      	//width : height
+	      	var w = 550;
+	      	var h = 420;
+
+			function popup(e) {
+				// this - элемент, с которым связано событие, e - описатель события
+				function center(x,X) {
+					return X > x ? Math.round(X/2 - x/2) : 0;
+				}
+				window.open(
+					this.href,
+					'intent',
+					'scrollbars=yes,resizable=yes,toolbar=no,location=yes,'+
+					'width=' + w + ',height=' + h + ',left=' + center(w, screen.width) + ',top=' + center(h, screen.height)
+				);
+				noDefault(e);
+			}
+
+			var a = document.body.getElementsByClassName('social');
+			for (var i = 0; i < a.length; i++)
+				addEvent(a[i], 'click', popup);
+		})();
+		</script>
 </html>
 
 

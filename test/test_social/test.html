@@ -10,8 +10,8 @@
 		<article>
 			<h1>Twitter</h1>
 
-			<!-- нужно поменять original_referer (url новости), text (заголовок новости) и url (равно referer) -->
-			<a class="social" href="https://twitter.com/share?original_referer=http%3A%2F%2Ftwitter.com%2Fgoodies%2Ftweetbutton&amp;source=tweetbutton&amp;text=Twitter%20%2F%20K%D0%BD%D0%BE%D0%BF%D0%BA%D0%B0%20%C2%AB%D0%A2%D0%B2%D0%B8%D1%82%D0%BD%D1%83%D1%82%D1%8C%C2%BB&amp;url=http%3A%2F%2Ftwitter.com%2Fgoodies%2Ftweetbutton">
+			<!-- нужно поменять original_referer, source=tweetbutton, text (заголовок новости) и url (равно referer) -->
+			<a class="social" href="https://twitter.com/share?source=tweetbutton&amp;text=Twitter%20%2F%20K%D0%BD%D0%BE%D0%BF%D0%BA%D0%B0%20%C2%AB%D0%A2%D0%B2%D0%B8%D1%82%D0%BD%D1%83%D1%82%D1%8C%C2%BB&amp;url=http%3A%2F%2Ftwitter.com%2Fgoodies%2Ftweetbutton">
 			tweet
 			</a>
 
@@ -54,8 +54,8 @@
 		</article>
 
 		<script>
-		{
-			addEvent =
+		(function () {
+			var addEvent =
 	  			document.addEventListener
 	  			?
 	    		function (el, type, fn) {//Chrome, FireFox, Opera, IE 9, Safari
@@ -67,14 +67,14 @@
 	      			el.attachEvent('on' + type, function() { return fn.call(el, window.event); })
 	      		};
 
-	      	noDefault = function (e) {
+	      	var noDefault = function (e) {
 	      		                                        //старые IE
 	      		e.preventDefault ? e.preventDefault() : e.returnValue = false;
 	      	}
 
 	      	//width : height
-	      	w = 550;
-	      	h = 420;
+	      	var w = 550;
+	      	var h = 420;
 
 			function popup(e) {
 				// this - элемент, с которым связано событие, e - описатель события
@@ -90,10 +90,10 @@
 				noDefault(e);
 			}
 
-			a = document.body.getElementsByClassName('social');
-			for (i = 0; i < a.length; i++)
+			var a = document.body.getElementsByClassName('social');
+			for (var i = 0; i < a.length; i++)
 				addEvent(a[i], 'click', popup);
-		}
+		})();
 		</script>
 	</body>
 </html>
