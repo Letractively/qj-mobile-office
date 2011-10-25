@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<input type="text" id="x" />
+		<input type="button" value="escape it" onclick="var x=document.getElementById('x'); x.value = escape(x.value).replace(/\//g,'%2F');" />
+	</body>
+</html>
