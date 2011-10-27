@@ -7,12 +7,6 @@
 		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<style media="screen">
-			/*color: #ff0000;*/
-			@font-face {
-	  			font-family: "CommodorePixelized";
-	  			src: url("Commodore Pixelized v1.2.eot"); 
-	    		src: local("Commodore 64 Pixelized"), url("Commodore Pixelized v1.2.ttf") format("truetype"); 
-	 		}
 			* {
 				margin: 0;
 				padding: 0;
@@ -29,29 +23,43 @@
 			a:link {
 				border-bottom: 1px dotted;
 				text-decoration: none;
-				color: #0000d4;
+				color: #0000a8;
 			}
-			a:link {
+			a:link.social {
 				border: 0;
 			}
 			a:visited {
 				color: #6699CC;
 			}
-			a:hover {
+			a:hover, a:hover.social {
 				border-bottom: 1px solid;
 			}
 			#page {
 				width: 1000px;
 				margin: 0 auto;
+				font: medium/1.112 Georgia, Palatino, "Palatino Linotype", "Times New Roman", serif;
+				background-color: #ffffff;
+				color: #000000;
 			}
 			#page_header {
 				margin: 0 20px 0 20px;
-				height: 198px;
-				background: url("header.png") no-repeat;
+				height: 190px;
+				background: url("header_.png") no-repeat;
 			}
 			#lang {
 				padding-top: 30px;
+				padding-bottom: 10px;
 				float: right; 
+			}
+			a#lang_selector:link, a#lang_selector:visited {
+				border-bottom: 1px dotted;
+				color: #999999;
+			}
+			a#lang_selector:hover {
+				border-bottom: 1px solid;
+			}
+			#current_lang {
+				font-weight: bold;
 			}
 			#optnavlist {
 				list-style-type: none;
@@ -67,7 +75,6 @@
 				float: left;
 				margin-left: 20px;
 				padding-right: 40px;
-				font: medium/1.112 Georgia, Palatino, "Palatino Linotype", "Times New Roman", serif;
 				word-spacing: 0.1em; 
 			}
 			#navbar {
@@ -102,20 +109,27 @@
 			}
 			.news_header {
 				color: #999999;
-				padding-bottom: 0.278em;
+				padding-bottom: 0.445em;
 			}
 			.news_footer {
-				padding-top: 0.278em;
+				padding-top: 0.445em;
+			}
+			.social img {
+				width: 20px;
+				height: 20px;
 			}
 			#sponsors {
 				padding-top: 1.112em;
+			}
+			#sponsors a:link, #sponsors a:visited, #sponsors a:hover {
+				border-bottom: 0;
+				color: #000000;
 			}
 			#widgets {
 				padding-top: 1.112em;
 				padding-left: 40px;
 				float: left;
 				margin-right: 20px;
-				font: medium/1.112 Georgia, Palatino, "Palatino Linotype", "Times New Roman", serif;
 				word-spacing: 0.1em;
 			}
 			.widget_block {
@@ -125,8 +139,8 @@
 			}
 			#copyleft {
 				width: 1000px;
-				padding-top: 2.223em;
-				padding-bottom: 2.223em;
+				padding-top: 3.334em;
+				padding-bottom: 1.667em;
 				text-align: center;
 				clear: both;
 				background: url("pixels.png") repeat-x bottom;
@@ -138,22 +152,21 @@
 	<body>
 		<div id="page">
 			<header id="page_header">
-				<p id="lang">RU &#x007C ENG</p>
+				<p id="lang"><span id="current_lang">ENG</span> &#x007C; <a href="#" id="lang_selector"><span>RU</span></a></p>
 				<ul id="optnavlist">
 					<li>
-						@mail
+						<a href="mailto:info@ructf.org">@mail</a>
 					</li>
 					<li>
-						@list
+						<a href="http://groups.google.com/group/ructfe/">@list</a>
 					</li>
 					<li>
-						#irq
+						<a href="irc://irc.freenode.net/ructfe" title="#ructfe@irc.freenode.net">#irc</a>
 					</li>
 					<li>
-						rss
+						<a href="#">rss</a>
 					</li>
 				</ul>
-				</p>
 			</header>
 			<div id="main">
 				<nav id="navbar">
@@ -179,23 +192,21 @@
 					<article class="news">
 						<header class="news_header">
 							<p>
-								<time pubdate datetime="2001-01-01T12:15">
+								<time pubdate datetime="2001-01-01T12:15:00Z">
 										01.01.2001 12:15
 								</time>
 							</p>
 						</header>
-						<p>
-							RuCTFE 2011 is officially announced
-						</p>
+						<p>RuCTFE 2011 is officially announced</p>
 						<footer class="news_footer">
-							<a class="social" href="http://vkontakte.ru/share.php?url=http%3A%2F%2Fructf.org%2Fe%2F2011&title=RuCTFE%202011%20is%20officially%20announced">
-								<img src="vk.png">
+							<a class="social" href="http://vkontakte.ru/share.php?url=http%3A%2F%2Fructf.org%2Fe%2F2011&amp;title=RuCTFE%202011%20is%20officially%20announced">
+								<img src="vk.png" alt="vkontakte">
 							</a>
 							<a class="social" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fructf.org%2Fe%2F2011">
-								<img src="fb.png">
+								<img src="fb.png" alt="facebook">
 							</a>
-							<a class="social" href="https://twitter.com/share?source=tweetbutton&text=RuCTFE%202011%20is%20officially%20announced&url=http%3A%2F%2Fructf.org%2Fe%2F2011">
-								<img src="tw.png">
+							<a class="social" href="https://twitter.com/share?source=tweetbutton&amp;text=RuCTFE%202011%20is%20officially%20announced&amp;url=http%3A%2F%2Fructf.org%2Fe%2F2011">
+								<img src="tw.png" alt="twitter">
 							</a>
 						</footer>
 					</article>
@@ -207,25 +218,22 @@
 								</time>
 							</p>
 						</header>
-						<p>
-							Registration is <a href="#" class="stdlink">open</a>
-						</p>
+						<p>Registration is <a href="#" class="stdlink">open</a></p>
 						<footer class="news_footer">
-							<a class="social" href="http://vkontakte.ru/share.php?url=http%3A%2F%2Fructf.org%2Fe%2F2011&title=Registration%20is%20open">
-								<img src="vk.png">
+							<a class="social" href="http://vkontakte.ru/share.php?url=http%3A%2F%2Fructf.org%2Fe%2F2011&amp;title=Registration%20is%20open">
+								<img src="vk.png" alt="vkontakte">
 							</a>
 							<a class="social" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fructf.org%2Fe%2F2011">
-								<img src="fb.png">
+								<img src="fb.png" alt="facebook">
 							</a>
-							<a class="social" href="https://twitter.com/share?source=tweetbutton&text=Registration%20is%20open&url=http%3A%2F%2Fructf.org%2Fe%2F2011">
-								<img src="tw.png">
+							<a class="social" href="https://twitter.com/share?source=tweetbutton&amp;text=Registration%20is%20open&amp;url=http%3A%2F%2Fructf.org%2Fe%2F2011">
+								<img src="tw.png" alt="twitter">
 							</a>
 						</footer>
 					</article>
 				</section>
 				<section id="sponsors">
-					<img src="rect.png"/>
-					<img src="rect.png"/>
+					<a href="http://yandex.ru"><img src="yandex.png" alt="yandex"></a>
 				</section>
 			</div>
 			<aside id="widgets">
@@ -234,14 +242,11 @@
 						<h1>
 						</h1>
 					</header>
-					<img src="navaho.png"/>
-					<p>
-					</p>
 				</article> 
 			</aside>
 			<footer id="copyleft">
 				<p>
-					qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+					&#0169; 2011 <a href="http://code.google.com/p/qj-mobile-office/">qj design</a>&nbsp;&#0038;&#0038;&nbsp;<a href="http://hackerdom.ru/">HackerDom</a>
 				</p>
 			</footer>
 		</div>
@@ -287,7 +292,7 @@
 			for (var i = 0; i < a.length; i++)
 				addEvent(a[i], 'click', popup);
 		})();
-		</script>
+	</script>
 </html>
 
 
