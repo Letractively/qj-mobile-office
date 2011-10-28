@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8"/>
+	<style>
+	body * {
+		display: block;
+		width: 500px;
+		margin: 0;
+		border: 0;
+		border-bottom: 1px solid #999999;
+	}
+	textarea {
+		height: 400px;
+	}
+	</style>
+
+	<script type="text/ecmascript">
+	function gen() {
+		var u = document.getElementById('url');
+		var t = document.getElementById('title');
+		var r = document.getElementById('result');
+
+		function esc(s) {
+			//символы *+\@ не обрабатываются стандартной функцией, поэтому используем replace
+			return escape(s).
+				replace(/\*/g,'%2A').replace(/\+/g,'%2B').replace(/\//g,'%2F').replace(/@/g,'%40').
+				replace(/%u([0-9A-F]+)/g, function (_, c) {
+					//escape кодирует nonASCII символы в виде %uXXXX, а нам нужно %XX%XX
+					//http://en.wikipedia.org/wiki/UTF-8:
+					// 00000yyy yyxxxxxx -> 110yyyyy 10xxxxxx
+					// zzzzyyyy yyxxxxxx -> 1110zzzz 10yyyyyy 10xxxxxx
+					// 000wwwzz zzzzyyyy yyxxxxxx -> 11110www 10zzzzzz 10yyyyyy 10xxxxxx
+					var u = parseInt(c, 16);
+					if (u > 1114111)
+						throw Error("bad utf-8");
+					var xx = '';
+					var bg = 128;
+					while (u > 128) {
+						xx = '%' + (128 | u & 63).toString(16).toUpperCase() + xx;
+						u >>= 6;
+						bg = (bg >> 1) | 128;
+					}
+					return '%' + (bg | u).toString(16).toUpperCase() + xx;
+				});
+		}
+
+		u = esc(u.value);
+		t = esc(t.value);
+
+		r.value = '<article class="news">\n<header class="news_header">\n\t<p><time pubdate datetime="2000-12-31">December 31st, 2000<\/time><\/p>\n<\/header>\n<p>TEXT<\/p>\n<footer class="news_footer">\n\t<a class="social" href="http://vkontakte.ru/share.php?url=' + u + '&title=' + t +'">\n\t\t<img src="vk.png" alt="vkontakte">\n\t<\/a>\n\t<a class="social" href="http://www.facebook.com/sharer/sharer.php?u=' + u + '">\n\t\t<img src="fb.png" alt="facebook">\n\t<\/a>\n\t<a class="social" href="https://twitter.com/share?source=tweetbutton&text=' + t + '&url=' + u + '">\n\t\t<img src="tw.png" alt="twitter">\n\t<\/a>\n<\/footer>\n<\/article>';
+	}
+	</script>
+	</head>
+	<body>
+		<input type="text" id="url" value="http://ructf.org/e/2011/"/>
+		<input type="text" id="title" value="п"/>
+		<input type="button" value="generate" onclick="gen()" />
+		<textarea id="result"></textarea>
+	</body>
+</html>
