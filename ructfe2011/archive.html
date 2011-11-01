@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>RuCTFE</title>
+		<!--[if lt IE 9]>
+		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<style media="screen">
+			* {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				outline: 0;
+			/*	font-size: 100%;
+				font: inherit; */
+				vertical-align: baseline;
+			} 
+			article, aside, figure, footer, header, hgroup, 
+			menu, nav, section { 
+				display: block;
+			}
+			a:link {
+				border-bottom: 1px dotted;
+				text-decoration: none;
+				color: #0000a8;
+			}
+			a:link.social {
+				border: 0;
+			}
+			a:visited {
+				color: #6699CC;
+			}
+			a:hover, a:hover.social {
+				border-bottom: 1px solid;
+			}
+			#page {
+				width: 1000px;
+				margin: 0 auto;
+				font: medium/1.112 Georgia, Palatino, "Palatino Linotype", "Times New Roman", serif;
+				background-color: #ffffff;
+				color: #000000;
+			}
+			#page_header {
+				margin: 0 20px 0 20px;
+				height: 190px;
+				background: url("header_.png") no-repeat;
+			}
+			#lang {
+				padding-top: 30px;
+				padding-bottom: 10px;
+				float: right; 
+			}
+			a#lang_selector:link, a#lang_selector:visited {
+				border-bottom: 1px dotted;
+				color: #999999;
+			}
+			a#lang_selector:hover {
+				border-bottom: 1px solid;
+			}
+			#current_lang {
+				font-weight: bold;
+			}
+			#optnavlist {
+				list-style-type: none;
+				float: right;
+				clear: both;
+			}
+			#optnavlist li {
+				float: left;
+				padding-left: 10px;
+			} 
+			#main {
+				width: 640px;
+				float: left;
+				margin-left: 20px;
+				padding-right: 40px;
+				word-spacing: 0.1em; 
+			}
+			#navbar {
+				padding-top: 1.112em;
+				padding-bottom: 3.334em;
+			}
+			#navbar a:link {
+				text-decoration: none;
+				color: #000000;
+				text-transform: uppercase;
+				font-weight: bold;
+				border: 0;
+			}
+			#navbar a:visited {
+				color: #000000;
+			}
+			#navlist {
+				list-style-type: none;
+			}
+			#navlist li {
+				float: left;
+				padding-right: 20px;
+			}
+			#navlist li:before {
+				content: "\\";
+			}
+
+			#oldsblock {
+				word-wrap: break-word;
+			}
+			.old {
+				padding-bottom: 1.112em;
+			}
+			.old h1 {
+				font-size: medium;
+				color: #999999;
+				padding-bottom: 0.445em;
+			}
+			.old_footer {
+				padding-top: 0.445em;
+			}
+
+			.social img {
+				width: 20px;
+				height: 20px;
+			}
+			#sponsors {
+				padding-top: 1.112em;
+			}
+			#sponsors a:link, #sponsors a:visited, #sponsors a:hover {
+				border-bottom: 0;
+				color: #000000;
+			}
+			#widgets {
+				padding-top: 1.112em;
+				padding-left: 40px;
+				float: left;
+				margin-right: 20px;
+				word-spacing: 0.1em;
+			}
+			.widget_block {
+				width: 240px;
+				float: right;
+				word-wrap: break-word;
+			}
+			#copyleft {
+				width: 1000px;
+				padding-top: 3.334em;
+				padding-bottom: 1.667em;
+				text-align: center;
+				clear: both;
+				background: url("pixels.png") repeat-x bottom;
+				font-size: small;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<header id="page_header">
+				<p id="lang"><span id="current_lang">ENG</span> &#x007C; <a href="#" id="lang_selector"><span>RU</span></a></p>
+				<ul id="optnavlist">
+					<li>
+						<a href="mailto:info@ructf.org">@mail</a>
+					</li>
+					<li>
+						<a href="http://groups.google.com/group/ructfe/">@list</a>
+					</li>
+					<li>
+						<a href="irc://irc.freenode.net/ructfe" title="#ructfe@irc.freenode.net">#irc</a>
+					</li>
+					<li>
+						<a href="#">rss</a>
+					</li>
+				</ul>
+			</header>
+			<div id="main">
+				<nav id="navbar">
+					<ul id="navlist">
+						<li>
+							<a href="#">About</a>
+						</li>
+						<li>
+							<a href="#">Rules</a>
+						</li>
+						<li>
+							<a href="#">Participants</a>
+						</li>
+						<li>
+							<a href="#">Developers</a>
+						</li>
+						<li>
+							<a href="#">Archive</a>
+						</li>
+					</ul>
+				</nav>
+				<section id="oldsblock">
+					<article class="old">
+						<h1>RuCTFE 2010</h1>
+						<p>The ultimate winner is <em>0ldEur0pe</em> from RWTH Aachen, Germany! The winning team gets a $900 money prize, generously offered by <a href="http://www.ideco-software.ru/">Ideco</a>.</p>
+						<footer class="old_footer">
+							<a href="http://ructf.org/e/2010/">read more</a>
+						</footer>
+					</article>
+					<article class="old">
+						<h1>RuCTFE 2009</h1>
+						<p>The ultimate winner is <em>squareroots</em> from University of Mannheim, Germany!</p>
+						<footer class="old_footer">
+							<a href="http://ructf.org/e/2009/">read more</a>
+						</footer>
+					</article>
+				</section>
+				<section id="sponsors">
+					<a href="http://yandex.ru"><img src="yandex.png" alt="yandex"></a>
+				</section>
+			</div>
+			<aside id="widgets">
+				<article class="widget_block">
+					<header>
+						<h1>
+						</h1>
+					</header>
+				</article> 
+			</aside>
+			<footer id="copyleft">
+				<p>
+					&#0169; 2011 <a href="http://code.google.com/p/qj-mobile-office/">qj design</a>&nbsp;&#0038;&#0038;&nbsp;<a href="http://hackerdom.ru/">HackerDom</a>
+				</p>
+			</footer>
+		</div>
+	</body>
+	<script type="text/ecmascript">
+		(function () {
+			var addEvent =
+	  			document.addEventListener
+	  			?
+	    		function (el, type, fn) {//Chrome, FireFox, Opera, IE 9, Safari
+	      			el.addEventListener(type, fn, false);
+	      		}
+	      		:
+	      		function (el, type, fn) {//старые IE
+	      			                                         //вызвать fn(window.event), в рамках которого this = el
+	      			el.attachEvent('on' + type, function() { return fn.call(el, window.event); })
+	      		};
+
+	      	var noDefault = function (e) {
+	      		                                        //старые IE
+	      		e.preventDefault ? e.preventDefault() : e.returnValue = false;
+	      	}
+
+	      	//width : height
+	      	var w = 550;
+	      	var h = 420;
+
+			function popup(e) {
+				// this - элемент, с которым связано событие, e - описатель события
+				function center(x,X) {
+					return X > x ? Math.round(X/2 - x/2) : 0;
+				}
+				window.open(
+					this.href,
+					'intent',
+					'scrollbars=yes,resizable=yes,toolbar=no,location=yes,'+
+					'width=' + w + ',height=' + h + ',left=' + center(w, screen.width) + ',top=' + center(h, screen.height)
+				);
+				noDefault(e);
+			}
+
+			var a = document.body.getElementsByClassName('social');
+			for (var i = 0; i < a.length; i++)
+				addEvent(a[i], 'click', popup);
+		})();
+	</script>
+</html>
+
+
