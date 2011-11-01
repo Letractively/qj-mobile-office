@@ -15,6 +15,7 @@
 		#teams img {
 			width: 20px;
 			height: 20px;
+			padding-right: 3px;
 		}
 	</style>
 	</head>
@@ -23,7 +24,18 @@
 			<header>
 				<h1>Registered teams (50 slots)</h1>
 			</header>
-			<img src="6.png" title="Bitmap">
+			<script>
+				var images = [];
+				var i = 1;
+				var slots = 50; 
+				while(i <= slots) {
+					images[i] = document.createElement("img");
+					images[i].setAttribute("src", i+".png");
+					document.getElementById("teams").appendChild(images[i]); 
+					i++; 
+				} 
+			</script>
+	<!--		<img src="6.png" title="Bitmap">
 			<img src="2.png" title="RWTH Aachen">
 			<img src="3.png" title="UniversitÃ¤t Paderborn">
 			<img src="4.png" title="Samara State University">
@@ -72,8 +84,8 @@
 			<img src="47.png" title="?">
 			<img src="48.png" title="?">
 			<img src="49.png" title="?">
-			<img src="50.png" title="?">
+			<img src="50.png" title="?"> -->
 			<a href="http://ructf.org/e/2011/registration/">all teams</a>
-		</div>
+		</article>
 	</body>
 </html>
