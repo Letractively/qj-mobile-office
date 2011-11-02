@@ -153,10 +153,52 @@
 				text-indent: -9999em;
 				height: 0;
 			}
-			#timeline {
+			#timeline { 
+				min-height: 220px;
+			}
+			.tl_outer {
+				float: left;
+				text-align: center;
+				font-weight: bold;
+			}
+			.tl_border {
+				border: 3px ridge #b8b922;
+				width: 105px;
+				height: 40px;
+				text-align: center;
+				font-weight: normal;
+			}
+			.tl_border_line {
+				border: 3px ridge #b8b922;
+				width: 105px;
+				height: 40px;
+				text-align: center;
+				font-weight: normal;
+				line-height: 40px;
+			}
+			.h_arrow {
+				float: left;
+				height: 60px;
+			}
+			.h_arrow img {
 				position: relative;
-				background: url("timeline2.png") no-repeat;
-				height: 213px;
+				top: 50%;
+			}
+			.g_arrow { 
+				width: 240px;
+				float: left;
+			}
+			.g_arrow img {
+				position: relative;
+				left: 75%;
+			}
+			.g_arrow_f { 
+				width: 240px;
+				float: left;
+			}
+			.g_arrow_f img {
+				position: relative;
+				left: 20%;
 			}
 			#team_grid {
 				border: 2px dotted white;
@@ -286,6 +328,12 @@
 							Timeline
 						</h1>
 					</header>
+					<div class="tl_outer">Sep 5<div class="tl_border">Official announcement</div></div><div class="h_arrow"><img src="arrow_y.png"></div>
+					<div class="tl_outer">Oct 17<div class="tl_border">Registration open</div></div><div class="g_arrow"><img src="arrow_g.png"></div>
+					<div class="tl_outer">15:00 Nov 19<div class="tl_border_line">Begin</div></div><div class="h_arrow"><img src="arrow_y2.png"></div>
+					<div class="tl_outer">15:00 Nov 18<div class="tl_border_line">VPNs ready</div></div><div class="g_arrow_f"><img src="arrow_g.png"></div>
+					<div class="tl_outer">16:00 Nov 19<div class="tl_border_line">Checking up</div></div><div class="h_arrow"><img src="arrow_y.png"></div>
+					<div class="tl_outer">00:00 Nov 20<div class="tl_border_line">End</div></div>
 				</article> 
 				<article class="widget_block" id="cd_clock">
 					<header class="widget_block_header">
