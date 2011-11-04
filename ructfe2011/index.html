@@ -9,60 +9,57 @@
 		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<style media="all">
-			* {margin: 0;padding: 0;border: 0;outline: 0;vertical-align: baseline;} 
-			article, aside, figure, footer, header, hgroup, 
-			menu, nav, section {display: block;}
-			a:link {border-bottom: 1px dotted;text-decoration: none;color: #0000a8;}
-			a:link.social {border: 0;}
-			a:visited {color: #6699CC;}
-			a:hover, a:hover.social {border-bottom: 1px solid;}
-			#page {width: 1000px;margin: 0 auto;font: medium/1.112 Georgia, Palatino, "Palatino Linotype", "Times New Roman", serif;
-				background-color: #ffffff;color: #000000;}
-			#page_header {margin: 0 20px 0 20px;	height: 190px;background: url("header_.png") no-repeat;}
-			#lang {padding-top: 30px;padding-bottom: 10px;float: right;}
-			a#lang_selector:link, a#lang_selector:visited {border-bottom: 1px dotted;color: #999999;}
-			a#lang_selector:hover {border-bottom: 1px solid;}
-			#current_lang {font-weight: bold;}
-			#optnavlist {list-style-type: none;float: right;clear: both;}
-			#optnavlist li {float: left;padding-left: 10px;} 
-			#main {width: 640px;float: left;margin-left: 20px;padding-right: 40px;word-spacing: 0.1em;}
-			#navbar {padding-top: 1.112em;padding-bottom: 3.334em;}
-			#navbar a:link {text-decoration: none;color: #000000;text-transform: uppercase;font-weight: bold;border: 0;}
-			#navbar a:visited {color: #000000;}
-			#navlist {list-style-type: none;}
-			#navlist li {float: left;padding-right: 20px;}
-			#navlist li:before {content: "\\";}
-			#newsblock {word-wrap: break-word;}
-			.news {padding-bottom: 1.112em;}
-			.news_header {color: #999999;padding-bottom: 0.445em;}
-			.news_footer {padding-top: 0.445em;}
-			.social {padding-right: 0.2em;}
-			#sponsors {padding-top: 1.112em;}
-			#sponsors a:link, #sponsors a:visited, #sponsors a:hover {border-bottom: 0;color: #000000;}
-			.sponsors_block {padding-right: 2.223em;color: #505050;width: 640px;
-				padding-bottom: 0.556em;float: left;text-align: center;}
-			.sponsors_block figcaption {font-size: xx-small;}
-			#widgets {width: 240px;padding-top: 1.112em;padding-left: 40px;float: right;	margin-right: 20px;word-spacing: 0.1em;}
-			.widget_block {padding-bottom: 2.223em;}
-			.widget_block_header {text-indent: -9999em;height: 0;}
-			#timeline {min-height: 220px;font-size: 15px;}
-			.tl_outer {float: left;text-align: center;font-weight: bolder;}
-			.tl_border {border: 3px ridge #b8b922;width: 105px;height: 40px;text-align: center;font-weight: normal;}
-			.tl_border_line {border: 3px ridge #b8b922;width: 105px;height: 40px;text-align: center;	font-weight: normal;line-height: 40px;}
-			.h_arrow {float: left;height: 60px;}
-			.h_arrow img {position: relative;top: 50%;}
-			.g_arrow {width: 240px;float: left;}
-			.g_arrow img {position: relative;left: 75%;}
-			.g_arrow_f {width: 240px;float: left;}
-			.g_arrow_f img {position: relative;left: 20%;}
-			#team_grid {border: 2px dotted white;}
-			#team_grid img {width: 20px;height: 20px;padding-right: 4px;}
-			#team_grid img.last_of_line {padding: 0;} 
-			#copyleft {width: 1000px;padding-top: 3.334em;padding-bottom: 1.667em;text-align: center;clear: both;background: url("pixels.png") repeat-x bottom;font-size: small;}
+			*{margin:0;padding:0;border:0;outline:0;vertical-align:baseline} 
+			article,aside,figure,footer,header,hgroup,menu,nav,section{display:block}
+			a:link{border-bottom:1px dotted;text-decoration:none;color:#0000a8}
+			a:link.social{border:0}
+			a:visited{color:#6699CC}
+			a:hover,a:hover.social{border-bottom:1px solid}
+			#page{width:1000px;margin:0 auto;font:medium/1.112 Georgia,Palatino,"Palatino Linotype","Times New Roman",serif;background-color:#ffffff;color:#000000}
+			#page_header{margin:0 20px 0 20px;height:190px;background:url("header_.png") no-repeat}
+			#lang{padding-top:30px;padding-bottom:10px;float:right}
+			a#lang_selector:link,a#lang_selector:visited{border-bottom:1px dotted;color:#999999}
+			a#lang_selector:hover{border-bottom:1px solid}
+			#current_lang{font-weight:bold}
+			#optnavlist{list-style-type:none;float:right;clear:both}
+			#optnavlist li{float:left;padding-left:10px} 
+			#main{width:640px;float:left;margin-left:20px;padding-right:40px;word-spacing:0.1em}
+			#navbar{padding-top:1.112em;padding-bottom:3.334em}
+			#navbar a:link{text-decoration:none;color:#000000;text-transform:uppercase;font-weight:bold;border:0}
+			#navbar a:visited{color:#000000}
+			#navlist{list-style-type:none}
+			#navlist li{float:left;padding-right:20px}
+			#navlist li:before{content:"\\"}
+			#newsblock{word-wrap:break-word}
+			.news{padding-bottom:1.112em}
+			.news_header{color:#999999;padding-bottom:0.445em}
+			.news_footer{padding-top:0.445em}
+			.social{padding-right:0.2em}
+			#sponsors{padding-top:1.112em}
+			#sponsors a:link,#sponsors a:visited,#sponsors a:hover{border-bottom:0;color:#000000}
+			.sponsors_block{padding-right:2.223em;color:#505050;width:640px;padding-bottom:0.556em;float:left;text-align:center}
+			.sponsors_block figcaption{font-size:xx-small}
+			#widgets{width:240px;padding-top:1.112em;padding-left:40px;float:right;margin-right:20px;word-spacing:0.1em}
+			.widget_block{padding-bottom:2.223em}
+			.widget_block_header{text-indent:-9999em;height:0}
+			#timeline{min-height:220px;font-size:15px}
+			.tl_outer{float:left;text-align:center;font-weight:bolder}
+			.tl_border{border:3px ridge #b8b922;width:105px;height:40px;text-align:center;font-weight:normal}
+			.tl_border_line{border:3px ridge #b8b922;width:105px;height:40px;text-align:center;font-weight:normal;line-height:40px}
+			.h_arrow{float:left;height:60px}
+			.h_arrow img{position:relative;top:50%}
+			.g_arrow{width:240px;float:left}
+			.g_arrow img{position:relative;left:75%}
+			.g_arrow_f{width:240px;float:left}
+			.g_arrow_f img{position:relative;left:20%}
+			#team_grid{border:2px dotted white}
+			#team_grid img{width:20px;height:20px;padding-right:4px}
+			#team_grid img.last_of_line{padding:0} 
+			#copyleft{width:1000px;padding-top:3.334em;padding-bottom:1.667em;text-align:center;clear:both;background:url("pixels.png") repeat-x bottom;font-size:small}
 		</style>
 		<noscript>
 		<style media="all">
-			#team_grid {position: relative;	background: url("team_grid.png") no-repeat; height: 285px;}
+			#team_grid{position:relative;background:url("team_grid.png") no-repeat;height:285px}
 		</style>
 		</noscript>
 	</head>
