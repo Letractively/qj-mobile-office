@@ -7,13 +7,12 @@
 		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<style media="screen">
+			@font-face {font-family:"CommodorePixelized";src:url("Commodore Pixelized v1.2.eot");src: local("Commodore 64 Pixelized"),url("Commodore Pixelized v1.2.ttf") format("truetype");}
 			* {
 				margin: 0;
 				padding: 0;
 				border: 0;
 				outline: 0;
-			/*	font-size: 100%;
-				font: inherit; */
 				vertical-align: baseline;
 			} 
 			article, aside, figure, footer, header, hgroup, 
@@ -101,7 +100,6 @@
 			#navlist li:before {
 				content: "\\";
 			}
-
 			#oldsblock {
 				word-wrap: break-word;
 			}
@@ -110,23 +108,18 @@
 			}
 			.old h1 {
 				font-size: medium;
-				color: #999999;
+				color: #a8a800;
 				padding-bottom: 0.445em;
 			}
 			.old_footer {
 				padding-top: 0.445em;
-			}
+				font-family: CommodorePixelized,Georgia,Palatino,"Palatino Linotype","Times New Roman",serif;
+				text-align: right;
 
-			.social img {
-				width: 20px;
-				height: 20px;
 			}
-			#sponsors {
-				padding-top: 1.112em;
-			}
-			#sponsors a:link, #sponsors a:visited, #sponsors a:hover {
-				border-bottom: 0;
+			.old_footer a:link, a:visited, a:hover { 
 				color: #000000;
+				border: 0;
 			}
 			#widgets {
 				padding-top: 1.112em;
@@ -207,9 +200,6 @@
 						</footer>
 					</article>
 				</section>
-				<section id="sponsors">
-					<a href="http://yandex.ru"><img src="yandex.png" alt="yandex"></a>
-				</section>
 			</div>
 			<aside id="widgets">
 				<article class="widget_block">
@@ -226,48 +216,6 @@
 			</footer>
 		</div>
 	</body>
-	<script type="text/ecmascript">
-		(function () {
-			var addEvent =
-	  			document.addEventListener
-	  			?
-	    		function (el, type, fn) {//Chrome, FireFox, Opera, IE 9, Safari
-	      			el.addEventListener(type, fn, false);
-	      		}
-	      		:
-	      		function (el, type, fn) {//старые IE
-	      			                                         //вызвать fn(window.event), в рамках которого this = el
-	      			el.attachEvent('on' + type, function() { return fn.call(el, window.event); })
-	      		};
-
-	      	var noDefault = function (e) {
-	      		                                        //старые IE
-	      		e.preventDefault ? e.preventDefault() : e.returnValue = false;
-	      	}
-
-	      	//width : height
-	      	var w = 550;
-	      	var h = 420;
-
-			function popup(e) {
-				// this - элемент, с которым связано событие, e - описатель события
-				function center(x,X) {
-					return X > x ? Math.round(X/2 - x/2) : 0;
-				}
-				window.open(
-					this.href,
-					'intent',
-					'scrollbars=yes,resizable=yes,toolbar=no,location=yes,'+
-					'width=' + w + ',height=' + h + ',left=' + center(w, screen.width) + ',top=' + center(h, screen.height)
-				);
-				noDefault(e);
-			}
-
-			var a = document.body.getElementsByClassName('social');
-			for (var i = 0; i < a.length; i++)
-				addEvent(a[i], 'click', popup);
-		})();
-	</script>
 </html>
 
 
