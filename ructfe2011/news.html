@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-		<title>RuCTFE 2011  &#0062; Archive</title>
+		<title>RuCTFE 2011 > News</title>
 		<!--[if lt IE 9]>
 		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -28,7 +28,16 @@
 			#navlist{list-style-type:none}
 			#navlist li{float:left;padding-right:20px}
 			#navlist li:before{content:"\\"}
-			#navbar a:visited{border:0;color:#000000}
+			#newsblock{word-wrap:break-word}
+			.news{padding-bottom:1.112em}
+			.news_header{color:#999999;padding-bottom:0.445em}
+			.news_footer{padding-top:0.445em}
+			.social{padding-right:0.2em}
+			#allnews{font-family: CommodorePixelized,Georgia,Palatino,"Palatino Linotype","Times New Roman",serif;}
+			#sponsors{padding-top:2.223em}
+			#sponsors a:link,#sponsors a:visited,#sponsors a:hover,#allnews a:link,#allnews a:visited,#allnews a:hover,#navbar a:visited{border:0;color:#000000}
+			.sponsors_block{padding-right:2.223em;color:#505050;width:640px;padding-bottom:0.556em;float:left;text-align:center}
+			.sponsors_block figcaption{font-size:xx-small}
 			#widgets{width:240px;padding-top:1.112em;padding-left:40px;float:right;margin-right:20px;}
 			.widget_block{padding-bottom:2.223em}
 			.widget_block header{text-indent:-9999em;height:0}
@@ -45,27 +54,6 @@
 			#team_grid{border:2px dotted white}
 			#team_grid img{width:20px;height:20px;padding-right:4px}
 			#team_grid img.last_of_line{padding:0} 
-			#oldsblock {
-				word-wrap: break-word
-			}
-			.old {
-				padding-bottom: 1.112em
-			}
-			.old h1 {
-				font-size: medium;
-				color: #a8a800;
-				padding-bottom: 0.445em
-			}
-			.old_footer {
-				padding-top: 0.445em;
-				font-family: CommodorePixelized,Georgia,Palatino,"Palatino Linotype","Times New Roman",serif;
-				text-align: right
-
-			}
-			.old_footer a:link, .old_footer a:visited, .old_footer a:hover { 
-				color: #000000;
-				border: 0
-			}
 			#copyleft{width:1000px;padding-top:3.334em;padding-bottom:1.667em;text-align:center;clear:both;background:url("pixels.png") repeat-x bottom;font-size:small}
 		</style>
 		<noscript>
@@ -87,19 +75,15 @@
 						<li><a rel="help" href="about.html">About</a></li><li><a href="teams.html">Teams</a></li><li><a href="developers.html">Developers</a></li><li><a href="archive.html">Archive</a></li>
 					</ul>
 				</nav>
-				<section id="oldsblock">
-					<article class="old">
-						<h1>RuCTFE 2010</h1>
-						<p>The ultimate winner is <em>0ldEur0pe</em> from RWTH Aachen, Germany! The winning team gets a $900 money prize, generously offered by <a href="http://www.ideco-software.ru/">Ideco</a>.</p>
-						<footer class="old_footer">
-							<a href="http://ructf.org/e/2010/">read more</a>
+				<section id="newsblock">
+					<article class="news">
+						<header class="news_header"><p><time pubdate datetime="2001-01-01T12:15:00Z">01.01.2001 12:15</time></p></header><p>RuCTFE 2011 is officially announced</p><footer class="news_footer"><a class="social" href="http://vkontakte.ru/share.php?url=http%3A%2F%2Fructf.org%2Fe%2F2011&amp;title=RuCTFE%202011%20is%20officially%20announced"><img src="vk.png" width="20" height="20" alt="vkontakte"></a><a class="social" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fructf.org%2Fe%2F2011"><img src="fb.png" width="20" height="20" alt="facebook"></a><a class="social" href="https://twitter.com/share?source=tweetbutton&amp;text=RuCTFE%202011%20is%20officially%20announced&amp;url=http%3A%2F%2Fructf.org%2Fe%2F2011"><img src="tw.png" width="20" height="20" alt="twitter"></a>
 						</footer>
 					</article>
-					<article class="old">
-						<h1>RuCTFE 2009</h1>
-						<p>The ultimate winner is <em>squareroots</em> from University of Mannheim, Germany!</p>
-						<footer class="old_footer">
-							<a href="http://ructf.org/e/2009/">read more</a>
+					<article class="news">
+						<header class="news_header">
+							<p><time pubdate datetime="2001-01-01">01.01.2001</time></p></header><p>Registration is <a href="#" class="stdlink">open</a></p><footer class="news_footer"><a class="social" href="http://vkontakte.ru/share.php?url=http%3A%2F%2Fructf.org%2Fe%2F2011&amp;title=Registration%20is%20open"><img src="vk.png" width="20" height="20" alt="vkontakte"></a><a class="social" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fructf.org%2Fe%2F2011"><img src="fb.png" width="20" height="20" alt="facebook"></a><a class="social" href="https://twitter.com/share?source=tweetbutton&amp;text=Registration%20is%20open&amp;url=http%3A%2F%2Fructf.org%2Fe%2F2011"><img src="tw.png" width="20" height="20" alt="twitter">
+							</a>
 						</footer>
 					</article>
 				</section>
@@ -123,7 +107,7 @@
 			</footer>
 		</div>
 		<script type="text/ecmascript">
-			(function(){var b=document.getElementById("page_header");(document.addEventListener?function(a,b,c){a.addEventListener(b,c,false)}:function(a,b,c){a.attachEvent("on"+b,function(){return c.call(a,window.event)})})(b,"click",function(a){if((a.srcElement?a.srcElement:a.target)==this)window.location.href = "index.html"});b.style.cursor="pointer"})()
+			(function(){function g(a){window.open(this.href,"intent","scrollbars=yes,resizable=yes,toolbar=no,location=yes,width="+c+",height="+d+",left="+(screen.width>c?Math.round(screen.width/2-c/2):0)+",top="+(screen.height>d?Math.round(screen.height/2-d/2):0));a.preventDefault?a.preventDefault():a.returnValue=false}for(var f=document.addEventListener?function(a,b,c){a.addEventListener(b,c,false)}:function(a,b,c){a.attachEvent("on"+b,function(){return c.call(a,window.event)})},c=550,d=420,b=document.body.getElementsByClassName("social"),e=0;e<b.length;e++){f(b[e],"click",g)}b=document.getElementById("page_header");f(b,"click",function(a){if((a.srcElement?a.srcElement:a.target)==this)window.location.href="index.html"});b.style.cursor="pointer"})()
 		</script>
 	</body>
 </html>

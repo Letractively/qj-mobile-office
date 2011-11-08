@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<title>RuCTFE 2011  &#0062; Teams</title>
+		<!--[if lt IE 9]>
+		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<style media="all">
+			@font-face{font-family:"CommodorePixelized";src:url("Commodore Pixelized v1.2.eot")}
+			@font-face{font-family:"CommodorePixelized";src:local("Commodore 64 Pixelized"),url("Commodore Pixelized v1.2.ttf")format("truetype")}
+			*{margin:0;padding:0;border:0;outline:0;vertical-align:baseline} 
+			article,aside,figure,footer,header,hgroup,menu,nav,section{display:block}
+			a:link{border-bottom:1px dotted;text-decoration:none;color:#0000a8}
+			a:visited{color:#6699CC}
+			a:hover,a:hover.social, a#lang_selector:hover{border-bottom:1px solid}
+			#page{width:1000px;margin:0 auto;font:medium/1.112 Georgia,Palatino,"Palatino Linotype","Times New Roman",serif;background-color:#ffffff;color:#000000}
+			#page_header{margin:0 20px 0 20px;height:190px;background:url("header_.png") no-repeat}
+			#page_header_hrefs{height:94px;float:right;text-align:right;cursor:default}
+			#lang{padding-top:30px;padding-bottom:10px;}
+			a#lang_selector:link,a#lang_selector:visited{border-bottom:1px dotted;color:#999999}
+			#current_lang{font-weight:bold}
+			#optnavlist{list-style-type:none}
+			#optnavlist li{float:left;padding-left:10px}
+			#main{width:640px;float:left;margin-left:20px;padding-right:40px;word-spacing:0.1em}
+			#navbar{padding-top:1.112em;padding-bottom:3.334em}
+			#navbar a{text-decoration:none;color:#000000;text-transform:uppercase;font-weight:bold;border:0}
+			#navlist{list-style-type:none}
+			#navlist li{float:left;padding-right:20px}
+			#navlist li:before{content:"\\"}
+			#navbar a:visited{border:0;color:#000000}
+			#widgets{width:240px;padding-top:1.112em;padding-left:40px;float:right;margin-right:20px;}
+			.widget_block{padding-bottom:2.223em}
+			.widget_block header{text-indent:-9999em;height:0}
+			#timeline{min-height:220px;font-size:15px}
+			.tl_outer{float:left;text-align:center;font-weight:bolder}
+			.tl_border{border:3px ridge #b8b922;width:105px;height:40px;text-align:center;font-weight:normal}
+			.tl_border_line{border:3px ridge #b8b922;width:105px;height:40px;text-align:center;font-weight:normal;line-height:40px}
+			.h_arrow{float:left;height:60px}
+			.h_arrow img{position:relative;top:50%}
+			.g_arrow{width:240px;float:left}
+			.g_arrow img{position:relative;left:75%}
+			.g_arrow_f{width:240px;float:left}
+			.g_arrow_f img{position:relative;left:20%}
+			#team_grid{border:2px dotted white}
+			#team_grid img{width:20px;height:20px;padding-right:4px}
+			#team_grid img.last_of_line{padding:0}
+			#infoblock {
+				word-wrap: break-word;
+			}
+			.info {
+				padding-bottom: 1.112em;
+			}
+			.info h1 {
+				font-size: medium;
+				color: #a8a800;
+				padding-bottom: 0.445em;
+			}
+			.info table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			th, td {
+				padding: 3px;
+			}
+			td img {
+				width: 50px;
+				height: 50px;
+			}
+			tr > * {
+				border: 1px solid #999999;
+			}
+			#copyleft{width:1000px;padding-top:3.334em;padding-bottom:1.667em;text-align:center;clear:both;background:url("pixels.png") repeat-x bottom;font-size:small}
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<header id="page_header">
+			<div id="page_header_hrefs">
+				<p id="lang"><span id="current_lang">ENG</span> &#x007C; <a href="#" id="lang_selector"><span>RU</span></a></p>
+				<ul id="optnavlist"><li><a href="mailto:info@ructf.org">@mail</a></li><li><a href="http://groups.google.com/group/ructfe/">@list</a></li><li><a href="irc://irc.freenode.net/ructfe" title="#ructfe@irc.freenode.net">#irc</a></li><li><a href="#">rss</a></li></ul>
+			</div>
+			</header>
+			<div id="main">
+				<nav id="navbar">
+					<ul id="navlist">
+						<li><a rel="help" href="about.html">About</a></li><li><a href="teams.html">Teams</a></li><li><a href="developers.html">Developers</a></li><li><a href="archive.html">Archive</a></li>
+					</ul>
+				</nav>
+				<section id="infoblock">
+					<article class="info">
+						<h1>Statistics</h1>
+						<img src="https://chart.googleapis.com/chart?cht=map:fixed=-60,-165,75,160&amp;chs=280x300&amp;chld=RU%7CNL%7CIN%7CCO%7CIT%7CAT%7CUS%7CDE%7CES%7CAR%7CFR%7CMN%7CJP%7CMY%7CVN%7CNG%7CSE%7CKR%7CMX%7CCH%7CCA%7CUA&amp;chco=B3BCC0%7C5781AE%7CFF0000%7CFFC726%7C885E80%7C518274%7CEA3F2C%7C2C323F%7C1A9C68%7C9C1A88%7C652A4F%7CCC591B%7CD2C243%7C177B67%7CAD0EBB%7C3B9C23%7CEE9A13%7C13EED5%7CFEDD88%7C5522FF%7C773355%7C883388%7C995533&amp;chma=0,10,10,0" alt="">
+						<img src="http://chart.apis.google.com/chart?chxs=0,676767,10&amp;chxt=x&amp;chs=350x410&amp;cht=p&amp;chco=5781AE%7CFF0000%7CFFC726%7C885E80%7C518274%7CEA3F2C%7C2C323F%7C1A9C68%7C9C1A88%7C652A4F%7CCC591B%7CD2C243%7C177B67%7CAD0EBB%7C3B9C23%7CEE9A13%7C13EED5%7CFEDD88%7C5522FF%7C773355%7C883388%7C995533&amp;chd=t:27,2,4,9,4,2,15,9,5,1,4,1,1,1,1,1,1,2,2,1,1,1&amp;chdlp=l&amp;chdl=Russia%7CNetherlands%7CIndia%7CColombia%7CItaly%7CAustria%7CUnited+States%7CGermany%7CSpain%7CArgentina%7CFrance%7CMongolia%7CJapan%7CMalaysia%7CViet+Nam%7CNigeria%7CSweden%7CSouth+Korea%7CMexico%7CSwitzerland%7CCanada%7CUkraine&amp;chp=1&amp;chl=27%7C2%7C4%7C9%7C4%7C2%7C15%7C9%7C5%7C1%7C4%7C1%7C1%7C1%7C1%7C1%7C1%7C2%7C2%7C1%7C1%7C1&amp;chma=110,20,10,10" alt="">
+					</article>
+					<article class="info">
+						<h1>Teams</h1>
+						<table cellspacing="0">
+						<tr>
+							<th>#
+							<th>team's name
+							<th>university
+							<th>country
+							<th>POC
+							<th>pgp key id
+							<th>logo
+						<tr>
+							<td>1
+							<td>Lobotomy
+							<td>Kurgan State University
+							<td>Russia
+							<td><a href='mailto:alter.pub%5Bat%5Dgmail.com'>Roman Dolgov</a>
+							<td>29B49214
+							<td><img src='logos/Lobotomy.1318870731.16.png'>
+						<tr>
+							<td>2
+							<td>HackerMayCry
+							<td>Ural Federal University
+							<td>Russia
+							<td><a href='mailto:last_g%5Bat%5Dhackerdom.ru'>Last G</a>
+							<td>19CCC9F5
+							<td><img src='logos/HackerMayCry.1318872126.94.png'>
+						<tr>
+							<td>3
+							<td>Bitmap
+							<td>Orenburg State University
+							<td>Russian Federation
+							<td><a href='mailto:drauggres%5Bat%5Dgmail.com'>Volkov Sergey</a>
+							<td>51268297
+							<td><img src='logos/Bitmap.1318876218.85.png'>
+						<tr>
+							<td>4
+							<td>Leet More
+							<td>NRU ITMO
+							<td>Russia 
+							<td><a href='mailto:leetmore%5Bat%5Dgmail.com'>Alexander Minozhenko</a>
+							<td>67E33C81
+							<td><img src='logos/LeetMore.1318876225.26.png'>
+						<tr>
+							<td>5
+							<td>De Eindbazen
+							<td>None
+							<td>Netherlands
+							<td><a href='mailto:hawkje%5Bat%5Dhawkje.net'>Hawkje</a>
+							<td>1EB9692A
+							<td><img src='logos/DeEindbazen.1318876792.6.png'>
+						<tr>
+							<td>6
+							<td>InCryptz 
+							<td>Govt. Engg. College, Ajmer
+							<td>India
+							<td><a href='mailto:vs4vijay%5Bat%5Dgmail.com'>Vijay Soni</a>
+							<td>
+							<td><img src='logos/InCryptz.1318875242.7.png'>
+						<tr>
+							<td>7
+							<td>Ufologists
+							<td>TTI SFU
+							<td>Russia
+							<td><a href='mailto:ufologists%5Bat%5Dgmail.com'>Maxim Naydenko</a>
+							<td>0866D5C9
+							<td><img src='logos/Ufologists.1318878189.02.png'>
+						<tr>
+							<td>8
+							<td>tinpardo
+							<td>Universidad Nacional de Colombia
+							<td>Colombia
+							<td><a href='mailto:tinpardo%5Bat%5Dgmail.com'>tinpardo</a>
+							<td>73283C7F
+							<td><img src='logos/tinpardo.1318878990.23.png'>
+						<tr>
+							<td>9
+							<td>SmokedChicken
+							<td>-
+							<td>Russia
+							<td><a href='mailto:anton.sapozhnikov%5Bat%5Dgmail.com'>Anton Sapozhnikov</a>
+							<td>
+							<td><img src='logos/SmokedChicken.1318879237.12.png'>
+						<tr>
+							<td>10
+							<td>CeSeNA
+							<td>Unibo
+							<td>Italy
+							<td><a href='mailto:cesena.sec%5Bat%5Dgmail.com'>Marco</a>
+							<td>
+							<td><img src='logos/CeSeNA.1318879246.59.png'>
+						<tr>
+							<td>11
+							<td>Bushwhackers
+							<td>MSU
+							<td>Russia
+							<td><a href='mailto:sakharov%5Bat%5Dlvk.cs.msu.su'>Fedor Sakharov</a>
+							<td>
+							<td><img src='logos/Bushwhackers.1318880381.36.png'>
+						<tr>
+							<td>12
+							<td>h4ck1nb3rg
+							<td>University of Applied Sciences Upper Austria, Hagenberg
+							<td>Austria
+							<td><a href='mailto:h4%5Bat%5Dor1is1.at'>Florian Brunner</a>
+							<td>70B01241
+							<td><img src='logos/h4ck1nb3rg.1318880899.11.png'>
+						<tr>
+							<td>13
+							<td>RPISEC
+							<td>Rensselaer Polytechnic Institute
+							<td>USA
+							<td><a href='mailto:officers%5Bat%5Drpisec.org'>Shawn Denbow</a>
+							<td>
+							<td><img src='logos/RPISEC.1318881646.71.png'>
+						<tr>
+							<td>14
+							<td>PeterPEN
+							<td>SPbSU
+							<td>Russia
+							<td><a href='mailto:revolver112%5Bat%5Dgmail.com'>Anton Ovchinnikov</a>
+							<td>
+							<td><img src='logos/PeterPEN.1318883135.5.png'>
+						<tr>
+							<td>15
+							<td>LowNoiseHG
+							<td>None
+							<td>Colombia
+							<td><a href='mailto:falcon%5Bat%5Dlownoisehg.org'>Martin Rubio - F4Lc0N</a>
+							<td>127A89CF
+							<td><img src='logos/LowNoiseHG.1318884026.3.png'>
+						<tr>
+							<td>16
+							<td>PPP
+							<td>Carnegie Mellon University
+							<td>United States of America
+							<td><a href='mailto:tylerni7%5Bat%5Dgmail.com'>Tyler</a>
+							<td>0x61FF94FC
+							<td><img src='logos/PPP.1318884508.85.png'>
+						<tr>
+							<td>17
+							<td>Brooklynt Overflow
+							<td>Polytechnic University of NYU
+							<td>United States
+							<td><a href='mailto:ctf%5Bat%5Disis.poly.edu'>HockeyInJune</a>
+							<td>
+							<td><img src='logos/BrooklyntOverfl.1318885677.3.png'>
+						<tr>
+							<td>18
+							<td>WizardofDos
+							<td>TU Darmstadt
+							<td>Germany
+							<td><a href='mailto:tobias.lange%5Bat%5Dcased.de'>Tobias Lange</a>
+							<td>DD47BBEB
+							<td><img src='logos/WizardofDos.1318886610.24.png'>
+						<tr>
+							<td>19
+							<td>sec-track
+							<td>sec-track
+							<td>Colombia
+							<td><a href='mailto:4v4t4r%5Bat%5Dgmail.com'>David Moreno Gaviria</a>
+							<td>5835DCAA
+							<td><img src='logos/sectrack.1318888548.27.png'>
+						<tr>
+							<td>20
+							<td>c00kies@venice
+							<td>Ca' Foscari, University of Venice
+							<td>Italy
+							<td><a href='mailto:lavish%5Bat%5Dgmail.com'>Marco Squarcina</a>
+							<td>0x4682EF52
+							<td><img src='logos/c00kiesvenice.1318891744.2.png'>
+						<tr>
+							<td>21
+							<td>int3pids
+							<td>-
+							<td>Spain
+							<td><a href='mailto:int3pids%5Bat%5Dgmail.com'>RoMaNSoFt</a>
+							<td>F190DE00
+							<td><img src='logos/int3pids.1318893443.76.png'>
+						<tr>
+							<td>22
+							<td>Honeypot
+							<td>Vladimir State University
+							<td>Russia
+							<td><a href='mailto:kulakov_maxim%5Bat%5Dmail.ru'>Maxim Kulakov</a>
+							<td>
+							<td><img src='logos/Honeypot.1318894420.85.png'>
+						<tr>
+							<td>23
+							<td>disekt
+							<td>NA
+							<td>USA
+							<td><a href='mailto:ctf%5Bat%5Djiva.us'>jiva</a>
+							<td>75391043
+							<td><img src='logos/disekt.1318897616.53.png'>
+						<tr>
+							<td>24
+							<td>kaioken
+							<td>-
+							<td>Argentina
+							<td><a href='mailto:lucasapa.sec%5Bat%5Dgmail.com'>Lucas Apa</a>
+							<td>5848F7FC
+							<td><img src='logos/kaioken.1318904007.43.png'>
+						<tr>
+							<td>25
+							<td>Team BIOS
+							<td>Amrita University
+							<td>India
+							<td><a href='mailto:hrishikeshmurali88%5Bat%5Dgmail.com'>Hrishikesh Murali</a>
+							<td>
+							<td><img src='logos/TeamBIOS.1318915505.46.png'>
+						<tr>
+							<td>26
+							<td>shell-storm
+							<td>SHST IUT
+							<td>France
+							<td><a href='mailto:mail-ructf%5Bat%5Dshell-storm.org'>shell-storm staff</a>
+							<td>
+							<td><img src='logos/shellstorm.1318915537.35.png'>
+						<tr>
+							<td>27
+							<td>Die Trying
+							<td>Samara State Aerospace University
+							<td>Russia
+							<td><a href='mailto:rkivalin%5Bat%5Dgmail.com'>Roman Kivalin</a>
+							<td>1777A67E
+							<td><img src='logos/DieTrying.1318917232.47.png'>
+						<tr>
+							<td>28
+							<td>FluxFingers
+							<td>Ruhr-UniversitÃ¤t Bochum
+							<td>Germany
+							<td><a href='mailto:fluxfingers%5Bat%5Drub.de'>Martin Steegmanns</a>
+							<td>CA75C1F4
+							<td><img src='logos/FluxFingers.1318885590.0.png'>
+						<tr>
+							<td>29
+							<td>Moguls
+							<td>-
+							<td>Mongolia
+							<td><a href='mailto:m0gul%5Bat%5Dymail.com'>Naya</a>
+							<td>
+							<td><img src='logos/Moguls.1318904520.65.png'>
+						<tr>
+							<td>30
+							<td>0ldEur0pe
+							<td>RWTH Aachen
+							<td>Germany
+							<td><a href='mailto:mark.schloesser%5Bat%5Drwth-aachen.de'>Mark Schloesser</a>
+							<td>0xA49BE572
+							<td><img src='logos/0ldEur0pe.1318926126.23.png'>
+						<tr>
+							<td>31
+							<td>WTF
+							<td>Engecon
+							<td>Russia
+							<td><a href='mailto:iwantctf%5Bat%5Dgmail.com'>Evgeny Neyolov</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>32
+							<td>[censored]
+							<td>IKBFU
+							<td>Russia
+							<td><a href='mailto:alpuzakov%5Bat%5Dgmail.com'>Alexander Puzakov</a>
+							<td>
+							<td><img src='logos/censored.1318932612.36.png'>
+						<tr>
+							<td>33
+							<td>WildRide
+							<td>CSU
+							<td>Russia
+							<td><a href='mailto:ilya.matkin%5Bat%5Dgmail.com'>Ilya Matkin</a>
+							<td>
+							<td><img src='logos/WildRide.1318934181.04.png'>
+						<tr>
+							<td>34
+							<td>sutegoma2
+							<td>AVTOKYO
+							<td>Japan
+							<td><a href='mailto:tessy%5Bat%5Davtokyo.org'>tessy</a>
+							<td>1FD1EF06
+							<td><img src='logos/sutegoma2.1318927046.41.png'>
+						<tr>
+							<td>35
+							<td>xPuzzle
+							<td>South Ural State University
+							<td>Russia
+							<td><a href='mailto:ildarmf%5Bat%5Dgmail.com'>Ildar</a>
+							<td>
+							<td><img src='logos/xPuzzle.1318940634.73.png'>
+						<tr>
+							<td>36
+							<td>theresistance
+							<td>TheResistance
+							<td>Italy
+							<td><a href='mailto:research%5Bat%5Dptrace-security.com'>gnix</a>
+							<td>12345678
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>37
+							<td>Sentinel
+							<td>UiTM
+							<td>Malaysia
+							<td><a href='mailto:saifulsyazwan90%5Bat%5Dgmail.com'>r3Alm</a>
+							<td>
+							<td><img src='logos/Sentinel.1318943257.4.png'>
+						<tr>
+							<td>38
+							<td>GLUM
+							<td>Universidad del Magdalena
+							<td>Colombia
+							<td><a href='mailto:cjaraba%5Bat%5Dunimagdalena.edu.co'>Camilo Jaraba</a>
+							<td>
+							<td><img src='logos/GLUM.1318950604.49.png'>
+						<tr>
+							<td>39
+							<td>DBX
+							<td>Digital Business
+							<td>Colombia
+							<td><a href='mailto:servidores%5Bat%5Ddigital01.com'>Boris Baron</a>
+							<td>
+							<td><img src='logos/DBX.1318951038.26.png'>
+						<tr>
+							<td>40
+							<td>Zacro
+							<td>Unipanamericana
+							<td>Colombia
+							<td><a href='mailto:omartinex%5Bat%5Dgmail.com'>Oscar Martinez</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>41
+							<td>CLGT
+							<td>CLGT
+							<td>Viet Nam
+							<td><a href='mailto:suto%5Bat%5Dvnsecurity.net'>suto</a>
+							<td>C44DC23C
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>42
+							<td>SiBears
+							<td>Tomsk State University
+							<td>Russia
+							<td><a href='mailto:d.a.stefantsov%5Bat%5Dsibears.ru'>Dmitry Stefantsov</a>
+							<td>2175141C
+							<td><img src='logos/SiBears.1318954289.04.png'>
+						<tr>
+							<td>43
+							<td>SlashDotDash
+							<td>Moscow State Technical University
+							<td>Russia
+							<td><a href='mailto:promix17%5Bat%5Dyandex.ru'>Pronyakin Michail</a>
+							<td>
+							<td><img src='logos/SlashDotDash.1318955633.66.png'>
+						<tr>
+							<td>44
+							<td>squareroots
+							<td>University of Mannheim
+							<td>Germany
+							<td><a href='mailto:poc%5Bat%5Dsquareroots.de'>Stefan Lubienetzki</a>
+							<td>90AF308A
+							<td><img src='logos/squareroots.1318957589.0.png'>
+						<tr>
+							<td>45
+							<td>Nigeria International Team
+							<td>University of Ibadan
+							<td>Nigeria
+							<td><a href='mailto:whitecitizen%5Bat%5Dgmail.com'>White Citizen</a>
+							<td>
+							<td><img src='logos/NigeriaInternat.1318958916.6.png'>
+						<tr>
+							<td>46
+							<td>ENOFLAG
+							<td>TU Berlin
+							<td>Germany
+							<td><a href='mailto:kbs-agrs.techteam%5Bat%5Dlists.tu-berlin.de'>JÃ¶rg Schneider</a>
+							<td>10237E40
+							<td><img src='logos/ENOFLAG.1318959553.21.png'>
+						<tr>
+							<td>47
+							<td>alcapwn
+							<td>UniversitÃ¤t Paderborn
+							<td>Germany
+							<td><a href='mailto:ctf%5Bat%5Dlists.irq0.org'>Frederik MÃ¶llers</a>
+							<td>9774CCDD
+							<td><img src='logos/alcapwn.1318960275.2.png'>
+						<tr>
+							<td>48
+							<td>fangAflaggaN
+							<td>///
+							<td>Sweden
+							<td><a href='mailto:fangaflaggan%5Bat%5Dgmail.com'>Svensson</a>
+							<td>
+							<td><img src='logos/fangAflaggaN.1318960323.58.png'>
+						<tr>
+							<td>49
+							<td>Koibasta
+							<td>Samara State Aerospace university
+							<td>Russia
+							<td><a href='mailto:koibasta%5Bat%5Dgmail.com'>Koibasta</a>
+							<td>
+							<td><img src='logos/Koibasta.1318961265.9.png'>
+						<tr>
+							<td>50
+							<td>Team Reboot
+							<td>Reboot Forum
+							<td>Across The Globe
+							<td><a href='mailto:its.dipanjan.das%5Bat%5Dgmail.com'>Holmes.Sherlock</a>
+							<td>A466720C
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>51
+							<td>w3pwn
+							<td>/
+							<td>France
+							<td><a href='mailto:w3pwn%5Bat%5Dgooglegroups.com'>w3pwn group</a>
+							<td>
+							<td><img src='logos/w3pwn.1318968969.85.png'>
+						<tr>
+							<td>52
+							<td>Delusions of Grandeur
+							<td>USAF Academy
+							<td>USA
+							<td><a href='mailto:delogrand%5Bat%5Dgmail.com'>Joshua Christman</a>
+							<td>
+							<td><img src='logos/DelusionsofGran.1318970324.87.png'>
+						<tr>
+							<td>53
+							<td>PHT
+							<td>UEM
+							<td>Spain
+							<td><a href='mailto:piruletous%5Bat%5Dgmail.com'>xGUSIx</a>
+							<td>
+							<td><img src='logos/PHT.1318972147.41.png'>
+						<tr>
+							<td>54
+							<td>Wild Hatz
+							<td>University of New Hampshire
+							<td>USA
+							<td><a href='mailto:agk23%5Bat%5Dunh.edu'>Alex MacPherson</a>
+							<td>
+							<td><img src='logos/WildHatz.1318972919.32.png'>
+						<tr>
+							<td>55
+							<td>Tower of Hanoi
+							<td>Politecnico di milano
+							<td>Italy
+							<td><a href='mailto:alessandro.barenghi%5Bat%5Dgmail.com'>Alessandro Barenghi</a>
+							<td>D0662371
+							<td><img src='logos/TowerofHanoi.1318977116.57.png'>
+						<tr>
+							<td>56
+							<td>RHCCDC
+							<td>Rose-Hulman
+							<td>US
+							<td><a href='mailto:festerserver%5Bat%5Dgmail.com'>fester</a>
+							<td>
+							<td><img src='logos/RHCCDC.1318992614.81.png'>
+						<tr>
+							<td>57
+							<td>X~bi0S
+							<td>Amrita University
+							<td>India
+							<td><a href='mailto:mail2aghoshlal%5Bat%5Dgmail.com'>Aghoshlal N</a>
+							<td>
+							<td><img src='logos/Xbi0S.1319001304.58.png'>
+						<tr>
+							<td>58
+							<td>C5H4k3rs
+							<td>UJI
+							<td>Spain
+							<td><a href='mailto:hardsec%5Bat%5Dgmail.com'>Hardsec</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>59
+							<td>Local Maximum
+							<td>UniversitÃ¤t Siegen
+							<td>Germany
+							<td><a href='mailto:fischer%5Bat%5Dwiwi.uni-siegen.de'>Lars Fischer</a>
+							<td>E228BBA0
+							<td><img src='logos/LocalMaximum.1319009927.22.png'>
+						<tr>
+							<td>60
+							<td>VU-bar
+							<td>VU University Amsterdam
+							<td>Netherlands
+							<td><a href='mailto:r.vermeulen%5Bat%5Dvu.nl'>Remco Vermeulen</a>
+							<td>
+							<td><img src='logos/VUbar.1319013059.6.png'>
+						<tr>
+							<td>61
+							<td>outsider
+							<td>secret
+							<td>Korea. Republic of
+							<td><a href='mailto:sfkino%5Bat%5Dgmail.com'>hyoje jo</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>62
+							<td>United
+							<td>Yandex
+							<td>Russia
+							<td><a href='mailto:abss.pakso%5Bat%5Dgmail.com'>Stanislav Pak</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>63
+							<td>BushJugend
+							<td>MSU
+							<td>Russia
+							<td><a href='mailto:samoylov%5Bat%5Dlvk.cs.msu.su'>Maxim Samoylov</a>
+							<td>
+							<td><img src='logos/BushJugend.1319026004.44.png'>
+						<tr>
+							<td>64
+							<td>asi
+							<td>tippingpoint dvlabs
+							<td>US
+							<td><a href='mailto:danger%5Bat%5Dhp.com'>jason jones</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>65
+							<td>Team AFK [Alaskan Fight Klub]
+							<td>University of Alaska Fairbanks
+							<td>USA
+							<td><a href='mailto:lamcdaniel%5Bat%5Dalaska.edu'>Lucas McDaniel</a>
+							<td>
+							<td><img src='logos/TeamAFKAlaskanF.1319047994.79.png'>
+						<tr>
+							<td>66
+							<td>w3b0n3s
+							<td>-
+							<td>Spain
+							<td><a href='mailto:staff%5Bat%5Dw3b0n3s.com'>Pepelux</a>
+							<td>
+							<td><img src='logos/w3b0n3s.1319048217.4.png'>
+						<tr>
+							<td>67
+							<td>HakM@ri$t
+							<td>Marist College
+							<td>US
+							<td><a href='mailto:j.cabrra%5Bat%5Dgmail.com'>Julio Cabrera</a>
+							<td>80A56B7C
+							<td><img src='logos/HakMrit.1319048324.84.png'>
+						<tr>
+							<td>68
+							<td>Sons of Glitches
+							<td>Mississippi State University
+							<td>United States of America
+							<td><a href='mailto:dantevios%5Bat%5Dgmail.com'>Jonathan Leigh</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>69
+							<td>LittleNuns
+							<td>None
+							<td>Spain
+							<td><a href='mailto:rogunix%5Bat%5Drogunix.com'>Rogunix</a>
+							<td>
+							<td><img src='logos/LittleNuns.1319053647.53.png'>
+						<tr>
+							<td>70
+							<td>jescobar
+							<td>Compubun
+							<td>Colombia
+							<td><a href='mailto:juanmauricioescobar%5Bat%5Dgmail.com'>Juan Escobar</a>
+							<td>9B1E083E
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>71
+							<td>busy-tone
+							<td>busy-tone
+							<td>Colombia
+							<td><a href='mailto:nemesis%5Bat%5Dbusy-tone.org'>nemesis</a>
+							<td>
+							<td><img src='logos/busytone.1319055266.21.png'>
+						<tr>
+							<td>72
+							<td>Drs
+							<td>NA
+							<td>Russia
+							<td><a href='mailto:mrvera11%5Bat%5Dgmail.com'>Vera</a>
+							<td>
+							<td><img src='logos/Drs.1319073067.74.png'>
+						<tr>
+							<td>73
+							<td>alternatives
+							<td>*
+							<td>South Korea
+							<td><a href='mailto:withhope%5Bat%5Dhanmail.net'>Young il Lee</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>74
+							<td>RicTeam
+							<td>RedInfoCol.org
+							<td>Colombia
+							<td><a href='mailto:880yhack%5Bat%5Dgmail.com'>Zarek Zama</a>
+							<td>
+							<td><img src='logos/RicTeam.1319081300.33.png'>
+						<tr>
+							<td>75
+							<td>Cookie_Monsters
+							<td>-
+							<td>Mexico
+							<td><a href='mailto:diego_ep05%5Bat%5Dhotmail.com'>Diego Boy</a>
+							<td>
+							<td><img src='logos/Cookie_Monsters.1319090335.39.png'>
+						<tr>
+							<td>76
+							<td>hst
+							<td>-
+							<td>-
+							<td><a href='mailto:s4zzwrdvt5%5Bat%5Dsnkmail.com'>Shen Hsieh</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>77
+							<td>Big-Daddy
+							<td>Big-Daddy
+							<td>France
+							<td><a href='mailto:int_0x80%5Bat%5Dgmx.fr'>int_0x80</a>
+							<td>D014B3C7
+							<td><img src='logos/BigDaddy.1319105522.82.png'>
+						<tr>
+							<td>78
+							<td>incecx
+							<td>foobar
+							<td>Switzerland
+							<td><a href='mailto:incecx_cby%5Bat%5Dhush.ai'>cby</a>
+							<td>b858ebac
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>79
+							<td>Tracer Tea
+							<td>Repeat Defenders
+							<td>USA
+							<td><a href='mailto:morphiend%5Bat%5Dgmail.com'>Mike Koss</a>
+							<td>23A42BCE
+							<td><img src='logos/TracerTea.1319118492.57.png'>
+						<tr>
+							<td>80
+							<td>zenk-security
+							<td>aucune
+							<td>France
+							<td><a href='mailto:ezanoo%5Bat%5Dgmail.com'>ezano</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>81
+							<td>The Chuck Norisses
+							<td>UniversitÃ© Laval / Freelance
+							<td>CANADA
+							<td><a href='mailto:simon.vigneux.1%5Bat%5Dulaval.ca'>Simon Vigneux</a>
+							<td>
+							<td><img src='logos/TheChuckNorisse.1319131713.17.png'>
+						<tr>
+							<td>82
+							<td>ctf time
+							<td>Personal CO
+							<td>USA
+							<td><a href='mailto:ctf_time%5Bat%5Dyahoo.com'>ctftime</a>
+							<td>NONE
+							<td><img src='logos/ctftime.1319135998.97.png'>
+						<tr>
+							<td>83
+							<td>My Little Pwnies
+							<td>University of Delaware 
+							<td>USA
+							<td><a href='mailto:teddy%5Bat%5Dprosauce.org'>Ted Reed</a>
+							<td>85BE1961
+							<td><img src='logos/MyLittlePwnies.1319165143.73.png'>
+						<tr>
+							<td>84
+							<td>Defragmented Brains
+							<td>TU Vienna
+							<td>Austria
+							<td><a href='mailto:stefan.kleindl%5Bat%5Dinso.tuwien.ac.at'>Stefan Kleindl</a>
+							<td>
+							<td><img src='logos/DefragmentedBra.1319185651.02.png'>
+						<tr>
+							<td>85
+							<td>MiSec
+							<td>MiSec
+							<td>United States
+							<td><a href='mailto:mwjcomputing%5Bat%5Dgmail.com'>Matt Johnson</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>86
+							<td>m3x1c4n5
+							<td>m3x1c4n5
+							<td>Mexico
+							<td><a href='mailto:hecky%5Bat%5Dneobits.org'>hecky</a>
+							<td>
+							<td><img src='logos/m3x1c4n5.1319242132.0.png'>
+						<tr>
+							<td>87
+							<td>K@\/@b0nG@
+							<td>SEUN
+							<td>Russia
+							<td><a href='mailto:poloniga%5Bat%5Dgmail.com'>Dmitriy Polonickiy</a>
+							<td>2048R/415ED5DD
+							<td><img src='logos/Kb0nG.1319277584.19.png'>
+						<tr>
+							<td>88
+							<td>Hackademics
+							<td>Hochschule Offenburg
+							<td>Germany
+							<td><a href='mailto:takeshix.query%5Bat%5Dgooglemail.com'>takeshix</a>
+							<td>
+							<td><img src='logos/Hackademics.1319300040.21.png'>
+						<tr>
+							<td>89
+							<td>Mona
+							<td>-
+							<td>Russia
+							<td><a href='mailto:logach%5Bat%5Dmail.ru'>loga</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>90
+							<td>ChecKeD
+							<td>Samara State University of Railway Transport
+							<td>Russia
+							<td><a href='mailto:tadi28%5Bat%5Dyandex.ru'>Ekaterina Kurenkova</a>
+							<td>
+							<td><img src='logos/ChecKeD.1319390072.96.png'>
+						<tr>
+							<td>91
+							<td>ISU
+							<td>Illinois State University
+							<td>United States
+							<td><a href='mailto:chris.spehn%5Bat%5Dgmail.com'>Chris</a>
+							<td>0x3094e1326bdfb639
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>92
+							<td>Yozik
+							<td>SFU
+							<td>Russia
+							<td><a href='mailto:ntpcp%5Bat%5Dyandex.ru'>Menschikov Alexander</a>
+							<td>
+							<td><img src='logos/Yozik.1319449319.9.png'>
+						<tr>
+							<td>93
+							<td>BTF4CTF
+							<td>ACME Inc.
+							<td>Ukraine
+							<td><a href='mailto:btf4ctf%5Bat%5Dgmail.com'>Marty McFly</a>
+							<td>
+							<td><img src='logos/BTF4CTF.1319461196.28.png'>
+						<tr>
+							<td>94
+							<td>Sneakers
+							<td>Amrita University
+							<td>India
+							<td><a href='mailto:javad_shareef%5Bat%5Dyahoo.co.in'>Javad Shareef M.A</a>
+							<td>
+							<td><img src='logos/Sneakers.1319461925.51.png'>
+						<tr>
+							<td>95
+							<td>InVaR
+							<td>SFU
+							<td>Russia
+							<td><a href='mailto:masrgy%5Bat%5Dgmail.com'>Sergey</a>
+							<td>
+							<td><img src='logos/InVaR.1319468154.41.png'>
+						<tr>
+							<td>96
+							<td>CCCAC
+							<td>CCCAC
+							<td>Germany
+							<td><a href='mailto:robbje%5Bat%5Daachen.ccc.de'>robbje</a>
+							<td>7942AD24
+							<td><img src='logos/CCCAC.1319535661.91.png'>
+						<tr>
+							<td>97
+							<td>Insight
+							<td>Ural Federal University
+							<td>Russia
+							<td><a href='mailto:ifireice%5Bat%5Dgmail.com'>fireice</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>98
+							<td>BAD Magic
+							<td>Samara State University
+							<td>Russia
+							<td><a href='mailto:vol.alexy%5Bat%5Dgmail.com'>Alexei Volkov</a>
+							<td>
+							<td><img src='logos/BADMagic.1319638170.99.png'>
+						<tr>
+							<td>99
+							<td>49th Security Division
+							<td>University of North Carolina - Charlotte
+							<td>United States of America
+							<td><a href='mailto:preid6%5Bat%5Duncc.edu'>PJ Reid</a>
+							<td>
+							<td><img src='logos/.dummy.png'>
+						<tr>
+							<td>100
+							<td>gn00bz
+							<td>Gnomversity
+							<td>Yu
+							<td><a href='mailto:gljiva%5Bat%5Dgmail.com'>Branko Spasojevic</a>
+							<td>
+							<td><img src='logos/gn00bz.1319752100.01.png'>
+						</table>
+					</article>
+				</section>
+			</div>
+			<aside id="widgets">
+				<article class="widget_block" id="timeline">
+					<header><h1>Timeline</h1></header><div class="tl_outer"><time datetime="2011-09-05">Sep 5</time><div class="tl_border">Official announcement</div></div><div class="h_arrow"><img src="arrow_y.png" width="18" height="10" alt="yellow_arrow"></div>	<div class="tl_outer"><time datetime="2011-10-17">Oct 17</time><div class="tl_border">Registration open</div></div><div class="g_arrow"><img src="arrow_g.png" width="10" height="18" alt="green_arrow"></div><div class="tl_outer"><time datetime="2011-11-19T15:00:00Z">15:00 Nov 19</time><div class="tl_border_line">Begin</div></div><div class="h_arrow"><img src="arrow_y2.png" width="18" height="10" alt="yellow_arrow"></div><div class="tl_outer"><time datetime="2011-11-18T15:00:00Z">15:00 Nov 18</time><div class="tl_border_line">VPNs ready</div></div><div class="g_arrow_f"><img src="arrow_g.png" width="10" height="18" alt="green_arrow"></div><div class="tl_outer"><time datetime="2011-11-19T16:00:00Z">16:00 Nov 19</time><div class="tl_border_line">Checking up</div></div><div class="h_arrow"><img src="arrow_y.png" width="18" height="10" alt="yellow_arrow"></div><div class="tl_outer"><time datetime="2011-11-20T00:00:00Z">00:00 Nov 20</time><div class="tl_border_line">End</div></div>
+				</article> 
+				<article class="widget_block" id="cd_clock">
+					<header><h1>Countdown clock</h1></header><iframe src="http://free.timeanddate.com/countdown/i2tvz4ma/cf12/cm0/cu4/ct3/cs1/ca2/co1/cr0/ss0/cac000/cpc000/pcfff/tcfff/fn3/fs100/szw448/szh189/tatChallenge%20begins%20in/tac000/tptChallenge%20started/tpc000/iso2011-11-19T15:00:00/bat0" width="247" height="64"></iframe>
+				</article>
+			</aside>
+			<footer id="copyleft">
+				<p>&#0169; 2011 <a rel="author" href="http://code.google.com/p/qj-mobile-office/">qj design</a>&nbsp;&#0038;&#0038;&nbsp;<a rel="author" href="http://hackerdom.ru/">HackerDom</a></p>
+			</footer>
+		</div>
+		<script type="text/ecmascript">
+			(function(){var b=document.getElementById("page_header");(document.addEventListener?function(a,b,c){a.addEventListener(b,c,false)}:function(a,b,c){a.attachEvent("on"+b,function(){return c.call(a,window.event)})})(b,"click",function(a){if((a.srcElement?a.srcElement:a.target)==this)window.location.href = "index.html"});b.style.cursor="pointer"})()
+		</script>
+	</body>
+</html>
