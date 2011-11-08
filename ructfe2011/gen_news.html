@@ -20,6 +20,7 @@
 		var u = document.getElementById('url');
 		var t = document.getElementById('title');
 		var r = document.getElementById('result');
+		var i = document.getElementById('id');
 
 		function esc(s) {
 			//символы *+\@ не обрабатываются стандартной функцией, поэтому используем replace
@@ -45,16 +46,24 @@
 				});
 		}
 
-		u = esc(u.value);
+		i = 'show_' + i.value;
+
+		if (!i.match(/^[A-Za-z][A-Za-z0-9\-_:.]*$/)) {
+			alert('bad id');
+			return;
+		}
+		
+		u = esc(u.value) + '#' + i;
 		t = esc(t.value);
 
-		r.value = '<article class="news">\n<header class="news_header">\n\t<p><time pubdate datetime="2000-12-31T00:00:00Z">00:00:00 December 31st, 2000<\/time><\/p>\n<\/header>\n<p>TEXT<\/p>\n<footer class="news_footer">\n\t<a class="social" href="http://vkontakte.ru/share.php?url=' + u + '&title=' + t +'">\n\t\t<img src="vk.png" alt="vkontakte">\n\t<\/a>\n\t<a class="social" href="http://www.facebook.com/sharer/sharer.php?u=' + u + '">\n\t\t<img src="fb.png" alt="facebook">\n\t<\/a>\n\t<a class="social" href="https://twitter.com/share?source=tweetbutton&text=' + t + '&url=' + u + '">\n\t\t<img src="tw.png" alt="twitter">\n\t<\/a>\n<\/footer>\n<\/article>';
+		r.value = '<article class="news" id="' + i + '">\n<header class="news_header">\n\t<p><time pubdate datetime="2000-12-31T00:00:00Z">00:00:00 December 31st, 2000<\/time><\/p>\n<\/header>\n<p>TEXT<\/p>\n<footer class="news_footer">\n\t<a class="social" href="http://vkontakte.ru/share.php?url=' + u + '&title=' + t +'">\n\t\t<img src="vk.png" width="20" height="20" alt="vkontakte">\n\t<\/a>\n\t<a class="social" href="http://www.facebook.com/sharer/sharer.php?u=' + u + '">\n\t\t<img src="fb.png" width="20" height="20" alt="facebook">\n\t<\/a>\n\t<a class="social" href="https://twitter.com/share?source=tweetbutton&text=' + t + '&url=' + u + '">\n\t\t<img src="tw.png" width="20" height="20" alt="twitter">\n\t<\/a>\n<\/footer>\n<\/article>';
 	}
 	</script>
 	</head>
 	<body>
 		<input type="text" id="url" value="http://ructf.org/e/2011/"/>
-		<input type="text" id="title" value="п"/>
+		<input type="text" id="title" value="few words?"/>
+		<input type="text" id="id" value="id?"/>
 		<input type="button" value="generate" onclick="gen()" />
 		<textarea id="result"></textarea>
 	</body>
